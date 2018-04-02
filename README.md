@@ -20,7 +20,7 @@ Includes by default:
 ``` 
  $ git clone https://github.com/cleanbrowsing/dnsperftest/
  $ cd dnsperftest
- $ sh ./dnstest.sh 
+ $ bash ./dnstest.sh 
                test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
 cloudflare     1 ms    1 ms    1 ms    2 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.10
 google         22 ms   1 ms    4 ms    24 ms   1 ms    19 ms   3 ms    56 ms   21 ms   21 ms     17.20
@@ -37,7 +37,7 @@ comodo         21 ms   22 ms   22 ms   22 ms   22 ms   22 ms   22 ms   21 ms   2
 To sort with the fastest first, add sort -k 22 -n at the end of the command:
 
 ```
-  $ sh ./dnstest.sh |sort -k 22 -n
+  $ bash ./dnstest.sh |sort -k 22 -n
                test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
 cloudflare     1 ms    1 ms    1 ms    4 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.30
 norton         2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms      2.00

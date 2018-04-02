@@ -1,5 +1,18 @@
 #!/bin/sh
 
+#Check for required utilities
+if ! which bc > /dev/null
+    then
+        echo "bc was not found."
+        exit 1
+fi
+
+if ! which dig > /dev/null
+    then
+        echo "dig was not found. Please install dnsutils"
+        exit 1
+fi
+
 PROVIDERS="
 1.1.1.1#cloudflare 
 8.8.8.8#google 

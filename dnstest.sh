@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #Check for required utilities
 if ! which bc > /dev/null

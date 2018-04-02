@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 PROVIDERS="
 1.1.1.1#cloudflare 

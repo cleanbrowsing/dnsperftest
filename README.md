@@ -41,7 +41,7 @@ neustar        2 ms    2 ms    2 ms    2 ms    1 ms    2 ms    2 ms    2 ms    2
 comodo         21 ms   22 ms   22 ms   22 ms   22 ms   22 ms   22 ms   21 ms   22 ms   24 ms     22.00
 ```
 
-To sort with the fastest first, add sort -k 22 -n at the end of the command:
+To sort with the fastest first, add `sort -k 22 -n` at the end of the command:
 
 ```
   $ bash ./dnstest.sh |sort -k 22 -n

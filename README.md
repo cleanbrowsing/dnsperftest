@@ -1,6 +1,6 @@
 # DNS Performance Test
 
-Shell script that leverages dig to test the performance from your location to some of the most popular DNS resolvers.
+Shell script to test the performance of the most popular DNS resolvers from your location.
 
 Includes by default:
  * CloudFlare 1.1.1.1
@@ -14,6 +14,13 @@ Includes by default:
  * Neustar
  * Comodo
 
+# Required 
+
+You need to install bc and dig. For Ubuntu:
+
+```
+ $ sudo apt-get install bc dnsutils
+```
 
 # Utilization
 

@@ -9,8 +9,13 @@ fi
 
 if ! which dig > /dev/null
     then
-        echo "dig was not found. Please install dnsutils."
-        exit 1
+    	if which drill > /dev/null
+   			then
+    		alias dig="drill"
+    	else
+        	echo "neither dig nor drill was not found. Please install dnsutils or ldns."
+        	exit 1
+    	fi
 fi
 
 

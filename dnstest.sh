@@ -3,13 +3,13 @@
 #Check for required utilities
 if ! which bc > /dev/null
     then
-        echo "bc was not found."
+        echo "bc was not found. Please install bc."
         exit 1
 fi
 
 if ! which dig > /dev/null
     then
-        echo "dig was not found. Please install dnsutils"
+        echo "dig was not found. Please install dnsutils."
         exit 1
 fi
 

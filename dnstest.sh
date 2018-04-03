@@ -1,23 +1,7 @@
 #!/bin/bash
 
-#Check for required utilities
-if ! which bc > /dev/null
-    then
-        echo "bc was not found. Please install bc."
-        exit 1
-fi
-
-if ! which dig > /dev/null
-    then
-    	if which drill > /dev/null
-   			then
-    		alias dig="drill"
-    	else
-        	echo "neither dig nor drill was not found. Please install dnsutils or ldns."
-        	exit 1
-    	fi
-fi
-
+command -v bc > /dev/null || { echo "bc was not found. Please install bc."; exit 1; }
+{ command -v drill > /dev/null && dig=drill; } || { command -v dig > /dev/null && dig=dig; } || { echo "dig was not found. Please install dnsutils."; exit 1; }
 
 PROVIDERS="
 1.1.1.1#cloudflare 
@@ -55,7 +39,7 @@ for p in $PROVIDERS; do
 
     printf "%-15s" "$pname"
     for d in $DOMAINS2TEST; do
-        ttime=`dig +stats @$pip $d |grep "Query time:" | cut -d : -f 2- | cut -d " " -f 2`
+        ttime=`$dig +stats @$pip $d |grep "Query time:" | cut -d : -f 2- | cut -d " " -f 2`
 	if [ -z "$ttime" ]; then
 	    #let's have time out be 1s = 1000ms
 	    ttime=1000

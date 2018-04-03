@@ -57,3 +57,11 @@ quad9          10 ms   37 ms   10 ms   10 ms   10 ms   145 ms  10 ms   10 ms   1
 yandex         177 ms  216 ms  178 ms  182 ms  186 ms  177 ms  183 ms  174 ms  186 ms  222 ms    188.10
 adguard        199 ms  210 ms  200 ms  201 ms  202 ms  202 ms  199 ms  200 ms  198 ms  201 ms    201.20
 ```
+
+# For Windows users using the Linux subsystem
+
+If you receive an error `$'\r': command not found`, convert the file to a Linux-compatible line endings using:
+
+    tr -d '\15\32' < dnstest.sh > dnstest-2.sh
+    
+Then run `bash ./dnstest-2.sh`

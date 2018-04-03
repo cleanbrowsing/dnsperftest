@@ -50,7 +50,7 @@ for p in $PROVIDERS; do
 
     printf "%-15s" "$pname"
     for d in $DOMAINS2TEST; do
-        ttime=`dig @$pip $d |grep "Query time:" | cut -d : -f 2- | cut -d " " -f 2`
+        ttime=`dig +stats @$pip $d |grep "Query time:" | cut -d : -f 2- | cut -d " " -f 2`
 	if [ -z "$ttime" ]; then
 	    #let's have time out be 1s = 1000ms
 	    ttime=1000

@@ -33,8 +33,8 @@ echo ""
 
 
 for p in $PROVIDERS; do
-    pip=`echo $p| cut -d '#' -f 1`;
-    pname=`echo $p| cut -d '#' -f 2`;
+    pip=${p%%#*}
+    pname=${p##*#}
     ftime=0
 
     printf "%-15s" "$pname"

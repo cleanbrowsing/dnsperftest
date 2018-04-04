@@ -9,6 +9,7 @@ NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/
 
 PROVIDERS="
 1.1.1.1#cloudflare 
+4.2.2.1#level3 
 8.8.8.8#google 
 9.9.9.9#quad9 
 208.67.222.123#opendns 

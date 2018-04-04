@@ -11,12 +11,12 @@ PROVIDERS="
 1.1.1.1#cloudflare 
 8.8.8.8#google 
 9.9.9.9#quad9 
-208.67.222.123#opendns 
+208.67.222.222#opendns 
 199.85.126.20#norton 
 185.228.168.168#cleanbrowsing 
-77.88.8.7#yandex 
-176.103.130.132#adguard 
-156.154.70.3#neustar 
+80.80.80.80#freenom
+4.2.2.4#level3 
+80.78.66.66#abcom
 8.26.56.26#comodo
 "
 

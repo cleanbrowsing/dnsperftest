@@ -1,5 +1,7 @@
 google.com
 facebook.com
+hostopia.com
+rash.al
 doubleclick.net
 google-analytics.com
 akamaihd.net

@@ -7,6 +7,7 @@ Results from tests done by our users. Feel free to add yours (including Country,
   * [USA, California, Fremont, Linode Datacenter](#usa-fremont-linode)
   * [USA, California, San Francisco, Digital Ocean Datacenter](#usa-sanfrancisco-digitalocean)
   * [USA, Texas, Dallas, Linode](#usa-dallas-linode)
+  * [Canada, NB, Fredericton, Bell Aliant](#canada-nb-fredericton-bell)
   
 ## Europe
   * [France, Paris, OVH Datacenter](#france-paris-ovh)
@@ -22,19 +23,19 @@ Results from tests done by our users. Feel free to add yours (including Country,
 **USA, California, San Diego, Frontier Residential**
 
 ``` 
-                      test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average
-#1  level3             6 ms    8 ms    6 ms    6 ms    13 ms   6 ms    5 ms    7 ms    6 ms    7 ms      7.00
-#2  cloudflare         6 ms    7 ms    11 ms   7 ms    7 ms    8 ms    7 ms    7 ms    7 ms    7 ms      7.40
-#3  neustar            7 ms    7 ms    7 ms    6 ms    6 ms    9 ms    6 ms    10 ms   21 ms   8 ms      8.70
-#4  norton             23 ms   7 ms    6 ms    9 ms    8 ms    7 ms    7 ms    6 ms    23 ms   8 ms      10.40
-#5  cleanbrowsing      22 ms   18 ms   16 ms   18 ms   18 ms   18 ms   17 ms   16 ms   16 ms   20 ms     17.90
-#6  google             6 ms    34 ms   7 ms    7 ms    42 ms   31 ms   11 ms   31 ms   7 ms    38 ms     21.40
-#7  opendns            35 ms   8 ms    7 ms    44 ms   21 ms   68 ms   8 ms    56 ms   6 ms    18 ms     27.10
-#8  quad9              15 ms   38 ms   80 ms   22 ms   15 ms   20 ms   24 ms   57 ms   20 ms   24 ms     31.50
-#9  freenom            21 ms   42 ms   19 ms   20 ms   111 ms  212 ms  20 ms   70 ms   19 ms   60 ms     59.40
-#10 comodo             79 ms   81 ms   74 ms   74 ms   75 ms   77 ms   76 ms   77 ms   80 ms   74 ms     76.70
-#11 yandex             188 ms  268 ms  195 ms  191 ms  190 ms  195 ms  191 ms  205 ms  189 ms  223 ms    203.50
-#12 adguard            196 ms  255 ms  203 ms  281 ms  229 ms  255 ms  183 ms  220 ms  187 ms  186 ms    219.50
+                      test1   test2   test3   test4   test5   test6   test7   test8   test9   Average
+#1  level3             6 ms    8 ms    6 ms    6 ms    13 ms   6 ms    5 ms    7 ms    6 ms   7.00
+#2  cloudflare         6 ms    7 ms    11 ms   7 ms    7 ms    8 ms    7 ms    7 ms    7 ms   7.40
+#3  neustar            7 ms    7 ms    7 ms    6 ms    6 ms    9 ms    6 ms    10 ms   21 ms  8.70
+#4  norton             23 ms   7 ms    6 ms    9 ms    8 ms    7 ms    7 ms    6 ms    23 ms  10.40
+#5  cleanbrowsing      22 ms   18 ms   16 ms   18 ms   18 ms   18 ms   17 ms   16 ms   16 ms  17.90
+#6  google             6 ms    34 ms   7 ms    7 ms    42 ms   31 ms   11 ms   31 ms   7 ms   21.40
+#7  opendns            35 ms   8 ms    7 ms    44 ms   21 ms   68 ms   8 ms    56 ms   6 ms   27.10
+#8  quad9              15 ms   38 ms   80 ms   22 ms   15 ms   20 ms   24 ms   57 ms   20 ms  31.50
+#9  freenom            21 ms   42 ms   19 ms   20 ms   111 ms  212 ms  20 ms   70 ms   19 ms  59.40
+#10 comodo             79 ms   81 ms   74 ms   74 ms   75 ms   77 ms   76 ms   77 ms   80 ms  76.70
+#11 yandex             188 ms  268 ms  195 ms  191 ms  190 ms  195 ms  191 ms  205 ms  189 ms 203.50
+#12 adguard            196 ms  255 ms  203 ms  281 ms  229 ms  255 ms  183 ms  220 ms  187 ms 219.50
 ```
 
 <a name="usa-fremont-linode"></a>
@@ -87,6 +88,23 @@ Results from tests done by our users. Feel free to add yours (including Country,
 #11 freenom           115 ms  125 ms  114 ms  125 ms  151 ms  230 ms  125 ms  124 ms  114 ms  116 ms    133.90
 #12 yandex            140 ms  177 ms  141 ms  137 ms  147 ms  171 ms  139 ms  143 ms  140 ms  163 ms    149.80
 ```
+
+<a name="canada-nb-fredericton-bell"></a>
+**Canada, NB, Fredericton, Bell Aliant**
+```
+                   test1   test2   test3   test4   test5   test6   test7   test8   test9   Average  
+#1  cloudflare     38 ms   38 ms   38 ms   37 ms   37 ms   37 ms   37 ms   37 ms   38 ms   37.40
+#2  cleanbrowsing  37 ms   37 ms   37 ms   37 ms   37 ms   37 ms   45 ms   38 ms   37 ms   37.90
+#3  neustar        37 ms   38 ms   38 ms   38 ms   38 ms   39 ms   37 ms   40 ms   38 ms   38.10
+#4  google         38 ms   37 ms   75 ms   37 ms   46 ms   38 ms   37 ms   40 ms   37 ms   42.20
+#5  comodo         38 ms   41 ms   100 ms  42 ms   38 ms   38 ms   40 ms   43 ms   39 ms   45.80
+#6  quad9          59 ms   62 ms   57 ms   58 ms   65 ms   67 ms   70 ms   71 ms   133 ms  84.80
+#7  norton         147 ms  280 ms  154 ms  38 ms   39 ms   38 ms   40 ms   37 ms   40 ms   85.10
+#8  adguard        119 ms  118 ms  128 ms  112 ms  118 ms  114 ms  119 ms  119 ms  116 ms  118.50
+#9  yandex         145 ms  147 ms  142 ms  144 ms  148 ms  174 ms  136 ms  141 ms  143 ms  146.10
+#10 opendns        172 ms  63 ms   245 ms  158 ms  146 ms  159 ms  279 ms  140 ms  163 ms  167.50
+```
+
 
 ## Europe Results
 <a name="france-paris-ovh"></a>

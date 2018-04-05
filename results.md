@@ -11,7 +11,10 @@ Results from tests done by our users. Feel free to add yours (including Country,
 ## Europe
   * [France, Paris, OVH Datacenter](#france-paris-ovh)
 
-
+## South America
+  * [Argentina, Buenos Aires, Residential](#agentina-buenosaires)
+  * [Brazil, Sao Paulo, AWS Datacenter](#brazil-saopaulo-aws)
+  
 
 ## North America Results
 
@@ -102,4 +105,39 @@ Results from tests done by our users. Feel free to add yours (including Country,
 #10 yandex            39 ms   38 ms   39 ms   38 ms   47 ms   39 ms   36 ms   42 ms   35 ms   78 ms     43.10
 #11 comodo            10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   417 ms    50.70
 #12 adguard           55 ms   125 ms  54 ms   54 ms   66 ms   61 ms   58 ms   54 ms   54 ms   54 ms     63.50
+```
+
+## South America
+<a name="argentina-buenosaires"></a>
+**Argentina, Buenos Aires, Residential**
+```
+                     test1   test2   test3   test4   test5   test6   test7   test8   test9   Average
+#1  cloudflare        26 ms   25 ms   26 ms   24 ms   26 ms   25 ms   24 ms   24 ms   25 ms   25.00
+#2  google            25 ms   25 ms   25 ms   27 ms   81 ms   25 ms   24 ms   26 ms   24 ms   30.60
+#3  cleanbrowsing     32 ms   36 ms   34 ms   35 ms   33 ms   31 ms   33 ms   156 ms  33 ms   46.00
+#4  opendns           149 ms  32 ms   32 ms   269 ms  34 ms   232 ms  32 ms   152 ms  87 ms   105.30
+#5  neustar           160 ms  150 ms  164 ms  161 ms  159 ms  156 ms  159 ms  159 ms  156 ms  158.30
+#6  quad9             158 ms  160 ms  156 ms  158 ms  157 ms  158 ms  163 ms  159 ms  159 ms  158.80
+#7  norton            156 ms  152 ms  163 ms  156 ms  174 ms  158 ms  157 ms  163 ms  161 ms  160.30
+#8  comodo            169 ms  170 ms  171 ms  162 ms  166 ms  161 ms  169 ms  162 ms  165 ms  166.10
+#9  yandex            271 ms  283 ms  297 ms  288 ms  287 ms  302 ms  277 ms  295 ms  294 ms  289.00
+#10 adguard           291 ms  290 ms  290 ms  294 ms  285 ms  288 ms  287 ms  297 ms  284 ms  290.00
+```
+
+<a name="brazil-saopaulo-aws"></a>
+**Brazil, Sao Paulo, AWS Datacenter**
+```
+                      test1   test2   test3   test4   test5   test6   test7   test8   test9   Average        
+#1  cleanbrowsing     3 ms    3 ms    4 ms    3 ms    4 ms    4 ms    3 ms    4 ms    4 ms    3.60
+#2  cloudflare        6 ms    5 ms    5 ms    5 ms    5 ms    29 ms   5 ms    5 ms    6 ms    10.20
+#3  google            58 ms   2 ms    1 ms    57 ms   105 ms  52 ms   2 ms    55 ms   49 ms   38.20
+#4  opendns           122 ms  4 ms    3 ms    180 ms  3 ms    122 ms  4 ms    4 ms    3 ms    44.90
+#5  neustar           112 ms  112 ms  112 ms  111 ms  112 ms  113 ms  113 ms  111 ms  114 ms  112.10
+#6  norton            118 ms  113 ms  111 ms  111 ms  113 ms  117 ms  113 ms  114 ms  113 ms  114.20
+#7  level3            122 ms  121 ms  120 ms  121 ms  122 ms  123 ms  123 ms  121 ms  122 ms  121.70
+#8  comodo            133 ms  128 ms  128 ms  129 ms  127 ms  128 ms  128 ms  128 ms  128 ms  129.00
+#9  freenom           161 ms  161 ms  168 ms  207 ms  172 ms  161 ms  162 ms  167 ms  169 ms  169.00
+#10 quad9             176 ms  176 ms  175 ms  175 ms  176 ms  175 ms  175 ms  175 ms  176 ms  175.40
+#11 yandex            240 ms  272 ms  243 ms  247 ms  242 ms  236 ms  237 ms  241 ms  236 ms  243.10
+#12 adguard           249 ms  245 ms  247 ms  250 ms  249 ms  244 ms  244 ms  252 ms  259 ms  248.70
 ```

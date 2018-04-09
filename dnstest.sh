@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 command -v bc > /dev/null || { echo "bc was not found. Please install bc."; exit 1; }
 { command -v drill > /dev/null && dig=drill; } || { command -v dig > /dev/null && dig=dig; } || { echo "dig was not found. Please install dnsutils."; exit 1; }
@@ -27,6 +27,7 @@ DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.
 
 
 totaldomains=0
+result=2000000
 printf "%-18s" ""
 for d in $DOMAINS2TEST; do
     totaldomains=$((totaldomains + 1))
@@ -45,11 +46,11 @@ for p in $NAMESERVERS $PROVIDERS; do
     for d in $DOMAINS2TEST; do
         ttime=`$dig +tries=1 +time=2 +stats @$pip $d |grep "Query time:" | cut -d : -f 2- | cut -d " " -f 2`
         if [ -z "$ttime" ]; then
-	        #let's have time out be 1s = 1000ms
-	        ttime=1000
+            #let's have time out be 1s = 1000ms
+            ttime=1000
         elif [ "x$ttime" = "x0" ]; then
-	        ttime=1
-	    fi
+            ttime=1
+        fi
 
         printf "%-8s" "$ttime ms"
         ftime=$((ftime + ttime))
@@ -57,7 +58,17 @@ for p in $NAMESERVERS $PROVIDERS; do
     avg=`bc -lq <<< "scale=2; $ftime/$totaldomains"`
 
     echo "  $avg"
+    n1=$(echo $avg | cut -d"." -f 1)
+    n2=$(echo $avg | cut -d"." -f 2)
+    nf=$(echo "$n1$n2")
+    if [[ "$nf" -lt "$result" ]]; then
+        tiempo=$avg
+        result=$nf
+        ganador=$pname
+    fi
 done
 
+echo ""
+echo "## Ganador $ganador con un tiempo de $tiempo ##"
 
 exit 0;

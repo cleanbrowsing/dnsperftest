@@ -8,19 +8,37 @@ command -v bc > /dev/null || { echo "bc was not found. Please install bc."; exit
 NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/\(.*\)/&#&/'`
 
 PROVIDERS="
-1.1.1.1#cloudflare 
-4.2.2.1#level3 
-8.8.8.8#google 
-9.9.9.9#quad9 
-80.80.80.80#freenom 
-208.67.222.123#opendns 
-199.85.126.20#norton 
-185.228.168.168#cleanbrowsing 
-77.88.8.7#yandex 
-176.103.130.132#adguard 
-156.154.70.3#neustar 
+1.1.1.1#cloudflare
+4.2.2.1#level3
+8.8.8.8#google_pri
+8.8.4.4#google_sec
+9.9.9.9#quad9
+80.80.80.80#freenom
+208.67.222.123#opendns1
+208.67.220.220#opendns2
+208.67.222.222#opendns3
+199.85.126.20#norton
+185.228.168.168#cleanbrowsing
+77.88.8.7#yandex
+176.103.130.132#adguard
+156.154.70.3#neustar
 8.26.56.26#comodo
 "
+
+#check country by location
+country=$(curl -s 'http://ip-api.com/json' | jq -r '.country')
+if [[ $country ]] ; then
+    #add file if exist
+    if [ ! -f countries/$country.txt ]; then
+        printf "\nLocalized country file for $country not found, using default entries list\r\n\n"
+    else
+        printf "\nYou have been localized in $country - Let me show also your country's results\r\n\n"
+        #read localized file
+        additionals_providers=$(cat countries/$country.txt)
+        #concatenate list
+        PROVIDERS="$PROVIDERS$additionals_providers"
+    fi
+fi
 
 # Domains to test. Duplicated domains are ok
 DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.com  wikipedia.org twitter.com gmail.com www.google.com whatsapp.com"

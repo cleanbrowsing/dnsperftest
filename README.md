@@ -16,7 +16,21 @@ Includes by default:
  * Neustar
  * Comodo
 
-# Required 
+** New! ** Include your own ISP DNS with geolocation!    
+Add your **countries/country.txt** file, like this "*Italy.txt*"
+
+```
+85.37.17.51#Telecom_pri
+85.38.28.97#Telecom_sec
+85.18.200.200#Fastweb_pri
+89.97.140.140#Fastweb_sec
+212.216.112.112#Alice_pri
+212.216.172.62#Alice_sec
+```
+
+Your own DNS will be added to the default list.
+
+# Required
 
 You need to install bc and dig. For Ubuntu:
 
@@ -26,11 +40,11 @@ You need to install bc and dig. For Ubuntu:
 
 # Utilization
 
-``` 
+```
  $ git clone --depth=1 https://github.com/cleanbrowsing/dnsperftest/
  $ cd dnsperftest
- $ bash ./dnstest.sh 
-               test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
+ $ bash ./dnstest.sh
+               test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average
 cloudflare     1 ms    1 ms    1 ms    2 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.10
 google         22 ms   1 ms    4 ms    24 ms   1 ms    19 ms   3 ms    56 ms   21 ms   21 ms     17.20
 quad9          10 ms   19 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   55 ms     15.40
@@ -47,7 +61,7 @@ To sort with the fastest first, add `sort -k 22 -n` at the end of the command:
 
 ```
   $ bash ./dnstest.sh |sort -k 22 -n
-               test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
+               test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average
 cloudflare     1 ms    1 ms    1 ms    4 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.30
 norton         2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms      2.00
 neustar        2 ms    2 ms    2 ms    2 ms    1 ms    2 ms    2 ms    2 ms    2 ms    22 ms     3.90
@@ -65,5 +79,5 @@ adguard        199 ms  210 ms  200 ms  201 ms  202 ms  202 ms  199 ms  200 ms  1
 If you receive an error `$'\r': command not found`, convert the file to a Linux-compatible line endings using:
 
     tr -d '\15\32' < dnstest.sh > dnstest-2.sh
-    
+
 Then run `bash ./dnstest-2.sh`

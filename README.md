@@ -28,20 +28,14 @@ Add your **countries/country.txt** file, like this "*Italy.txt*"
 212.216.172.62#Alice_sec
 ```
 
-**Note**: require `jq`for json parsing
-
-```
-sudo apt-get install jq
-```
-
 Your own DNS will be added to the default list.
 
 # Required
 
-You need to install bc and dig. For Ubuntu:
+You need to install bc, dig and jq. For Ubuntu/Debian:
 
 ```
- $ sudo apt-get install bc dnsutils
+ $ sudo apt-get install bc dnsutils jq
 ```
 
 # Utilization

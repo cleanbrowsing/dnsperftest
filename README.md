@@ -16,7 +16,7 @@ Includes by default:
  * Neustar
  * Comodo
 
-** New! ** Include your own ISP DNS with geolocation!    
+**New!** Include your own ISP DNS with geolocation!    
 Add your **countries/country.txt** file, like this "*Italy.txt*"
 
 ```
@@ -26,6 +26,12 @@ Add your **countries/country.txt** file, like this "*Italy.txt*"
 89.97.140.140#Fastweb_sec
 212.216.112.112#Alice_pri
 212.216.172.62#Alice_sec
+```
+
+**Note**: require `jq`for json parsing
+
+```
+sudo apt-get install jq
 ```
 
 Your own DNS will be added to the default list.

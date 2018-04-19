@@ -12,11 +12,13 @@ Results from tests done by our users. Feel free to add yours (including Country,
 ## Europe
   * [France, Paris, OVH Datacenter](#france-paris-ovh)
 
+## Africa
+  * [Kenya, Nairobi, Safaricom ISP](#kenya-nairobi-safaricom)
+  
 ## South America
   * [Argentina, Buenos Aires, Residential](#agentina-buenosaires)
   * [Brazil, Sao Paulo, AWS Datacenter](#brazil-saopaulo-aws)
   
-
 ## North America Results
 
 <a name="usa-san-diego-frontier"></a>
@@ -158,4 +160,22 @@ Results from tests done by our users. Feel free to add yours (including Country,
 #10 quad9             176 ms  176 ms  175 ms  175 ms  176 ms  175 ms  175 ms  175 ms  176 ms  175.40
 #11 yandex            240 ms  272 ms  243 ms  247 ms  242 ms  236 ms  237 ms  241 ms  236 ms  243.10
 #12 adguard           249 ms  245 ms  247 ms  250 ms  249 ms  244 ms  244 ms  252 ms  259 ms  248.70
+```
+## Africa Results
+<a name="kenya-nairobi-safaricom"></a>
+**Kenya, Nairobi, Safaricom ISP**
+```
+                   test1   test2   test3   test4   test5   test6   test7   test8   test9   test10    Average 
+#1  google2nd      12 ms   12 ms   12 ms   11 ms   138 ms  12 ms   13 ms   12 ms   11 ms   12 ms     24.50
+#2  cloudflare2nd  58 ms   59 ms   58 ms   58 ms   223 ms  58 ms   57 ms   58 ms   77 ms   59 ms     76.50
+#3  quad9          16 ms   380 ms  18 ms   21 ms   91 ms   18 ms   19 ms   19 ms   19 ms   190 ms    79.10
+#4  google         12 ms   11 ms   15 ms   140 ms  180 ms  146 ms  12 ms   156 ms  12 ms   138 ms    82.20
+#5  opendns        58 ms   57 ms   58 ms   224 ms  58 ms   221 ms  58 ms   223 ms  224 ms  58 ms     123.90
+#6  neustar        160 ms  147 ms  148 ms  148 ms  147 ms  148 ms  149 ms  148 ms  147 ms  148 ms    149.00
+#7  norton         147 ms  158 ms  149 ms  148 ms  147 ms  173 ms  153 ms  148 ms  148 ms  148 ms    151.90
+#8  adguard        182 ms  186 ms  169 ms  185 ms  179 ms  184 ms  182 ms  183 ms  183 ms  196 ms    182.90
+#9  comodo         212 ms  191 ms  201 ms  186 ms  191 ms  203 ms  203 ms  205 ms  201 ms  226 ms    201.90
+#10 yandex         221 ms  233 ms  200 ms  212 ms  256 ms  261 ms  218 ms  212 ms  210 ms  228 ms    225.10
+#11 cleanbrowsing  262 ms  254 ms  270 ms  270 ms  263 ms  254 ms  275 ms  266 ms  254 ms  246 ms    261.40
+#12 cloudflare     1000 ms 1000 ms 1000 ms 1000 ms 1000 ms 1000 ms 1000 ms 1000 ms 1000 ms 1000 ms   1000.00
 ```

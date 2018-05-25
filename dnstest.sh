@@ -62,13 +62,13 @@ for p in $NAMESERVERS $PROVIDERS; do
     n2=$(echo $avg | cut -d"." -f 2)
     nf=$(echo "$n1$n2")
     if [[ "$nf" -lt "$result" ]]; then
-        tiempo=$avg
+        timer=$avg
         result=$nf
-        ganador=$pname
+        winner=$pname
     fi
 done
 
 echo ""
-echo "## Ganador $ganador con un tiempo de $tiempo ##"
+echo "## The Winner is $winner with a time of $timer ##"
 
 exit 0;

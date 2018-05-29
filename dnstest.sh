@@ -18,7 +18,8 @@ PROVIDERS="
 208.67.220.220#opendns2
 208.67.222.222#opendns3
 199.85.126.20#norton
-185.228.168.168#cleanbrowsing
+185.228.168.168#cleanbrowsing_pri
+185.228.168.169#cleanbrowsing_sec
 77.88.8.7#yandex
 176.103.130.132#adguard
 156.154.70.3#neustar

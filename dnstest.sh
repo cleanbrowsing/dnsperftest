@@ -25,16 +25,16 @@ PROVIDERS="
 8.26.56.26#comodo
 "
 
-#check country by location
-country=$(curl -s 'http://ip-api.com/json' | jq -r '.country')
-if [[ $country ]] ; then
-    #add file if exist
-    if [ ! -f countries/$country.txt ]; then
-        printf "\nLocalized country file for $country not found, using default entries list\r\n\n"
+#check countryCode by location
+countryCode=$(curl -s 'http://ip-api.com/json' | jq -r '.countryCode')
+if [[ $countryCode ]] ; then
+    #check file if exist
+    if [ ! -f countries/$countryCode.txt ]; then
+        printf "\nLocalized countryCode file for $countryCode not found, using default entries list\r\n\n"
     else
-        printf "\nYou have been localized in $country - Let me show also your country's results\r\n\n"
+        printf "\nYou have been localized in $countryCode - Let me show also your countryCode's results\r\n\n"
         #read localized file
-        additionals_providers=$(cat countries/$country.txt)
+        additionals_providers=$(cat countries/$countryCode.txt)
         #concatenate list
         PROVIDERS="$PROVIDERS$additionals_providers"
     fi

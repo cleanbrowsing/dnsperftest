@@ -17,7 +17,7 @@ Includes by default:
  * Comodo
 
 **New!** Include your own ISP DNS with geolocation!    
-Add your **countries/country.txt** file, like this "*Italy.txt*"
+Add your **countries/countryCode.txt** file, like this "*IT.txt*"
 
 ```
 85.37.17.51#Telecom_pri

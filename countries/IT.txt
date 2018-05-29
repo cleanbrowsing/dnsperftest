@@ -2,5 +2,3 @@
 85.38.28.97#Telecom_sec
 85.18.200.200#Fastweb_pri
 89.97.140.140#Fastweb_sec
-212.216.112.112#Alice_pri
-212.216.172.62#Alice_sec

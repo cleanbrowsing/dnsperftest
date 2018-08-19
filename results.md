@@ -11,11 +11,11 @@ Results from tests done by our users. Feel free to add yours (including Country,
   
 ## Europe
   * [France, Paris, OVH Datacenter](#france-paris-ovh)
+  * [Slovakia, Bratislava, Residential, SWAN optical](#slovakia-bratislava)
 
 ## South America
   * [Argentina, Buenos Aires, Residential](#agentina-buenosaires)
   * [Brazil, Sao Paulo, AWS Datacenter](#brazil-saopaulo-aws)
-  
 
 ## North America Results
 
@@ -124,7 +124,24 @@ Results from tests done by our users. Feel free to add yours (including Country,
 #11 comodo            10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   417 ms    50.70
 #12 adguard           55 ms   125 ms  54 ms   54 ms   66 ms   61 ms   58 ms   54 ms   54 ms   54 ms     63.50
 ```
-
+<a name="slovakia-bratislava"></a>
+**Slovakia, Bratislava, Residential, SWAN optical**
+```
+                      test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average
+#1  cloudflare         6 ms    7 ms    7 ms    6 ms    7 ms    6 ms    6 ms    7 ms    6 ms    7 ms      6.50
+#2  level3            15 ms   15 ms   15 ms   17 ms   15 ms   15 ms   15 ms   15 ms   15 ms   15 ms     15.20
+#3  norton            15 ms   16 ms   20 ms   17 ms   16 ms   15 ms   16 ms   15 ms   15 ms   16 ms     16.10
+#4  neustar           17 ms   15 ms   16 ms   16 ms   16 ms   17 ms   16 ms   16 ms   19 ms   16 ms     16.40
+#5  google            14 ms   16 ms   14 ms   23 ms   30 ms   29 ms   15 ms   24 ms   14 ms   14 ms     19.30
+#6  8.8.8.8           25 ms   15 ms   17 ms   22 ms   29 ms   23 ms   14 ms   24 ms   14 ms   16 ms     19.90
+#7  opendns            7 ms    7 ms    7 ms    7 ms   30 ms  241 ms    7 ms    7 ms    9 ms   31 ms     35.30
+#8  yandex            40 ms   41 ms   43 ms   41 ms   49 ms   40 ms   40 ms   40 ms   40 ms   74 ms     44.80
+#9  comodo            33 ms   238 ms  34 ms   38 ms   34 ms   31 ms   32 ms   40 ms   38 ms   34 ms     55.20
+#10 adguard           51 ms   94 ms   51 ms   53 ms   93 ms   52 ms   58 ms   52 ms   52 ms   55 ms     61.10
+#11 cleanbrowsing     53 ms   94 ms   93 ms   51 ms   53 ms   52 ms   57 ms   60 ms   66 ms   53 ms     63.20
+#12 quad9              4 ms    4 ms    4 ms    4 ms    4 ms  292 ms    4 ms  247 ms    4 ms  267 ms     83.40
+#13 freenom           170 ms  259 ms  270 ms  252 ms  268 ms  277 ms  266 ms  366 ms  270 ms  271 ms   266.90
+```
 ## South America
 <a name="argentina-buenosaires"></a>
 **Argentina, Buenos Aires, Residential**

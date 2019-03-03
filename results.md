@@ -13,7 +13,7 @@ Results from tests done by our users. Feel free to add yours (including Country,
   * [France, Paris, OVH Datacenter](#france-paris-ovh)
 
 ## South America
-  * [Argentina, Buenos Aires, Residential](#agentina-buenosaires)
+  * [Argentina, Buenos Aires, Residential](#argentina-buenosaires)
   * [Brazil, Sao Paulo, AWS Datacenter](#brazil-saopaulo-aws)
 
 ## Africa
@@ -128,7 +128,7 @@ Results from tests done by our users. Feel free to add yours (including Country,
 ```
 
 ## South America
-<a name="agentina-buenosaires"></a>
+<a name="argentina-buenosaires"></a>
 **Argentina, Buenos Aires, Residential**
 ```
                      test1   test2   test3   test4   test5   test6   test7   test8   test9   Average

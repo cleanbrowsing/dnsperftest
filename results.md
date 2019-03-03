@@ -166,17 +166,17 @@ Results from tests done by our users. Feel free to add yours (including Country,
 <a name="tn-elghazela-orange"></a>
 **Tunisia, Ariana, El Ghazela, Orange Tunisie**
 ```
-                  test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
-#1 cloudflare        66 ms   61 ms   73 ms   65 ms   60 ms   65 ms   64 ms   66 ms   75 ms   64 ms     65.90
-#2 level3            64 ms   59 ms   73 ms   74 ms   65 ms   85 ms   65 ms   73 ms   77 ms   60 ms     69.50
-#3 google            63 ms   55 ms   54 ms   74 ms   87 ms   75 ms   54 ms   95 ms   66 ms   64 ms     68.70
-#4 quad9             89 ms   80 ms   92 ms   66 ms   67 ms   82 ms   63 ms   72 ms   88 ms   67 ms     76.60
-#5 freenom           87 ms   124 ms  92 ms   111 ms  136 ms  250 ms  128 ms  338 ms  101 ms  177 ms    154.40
-#6 opendns           75 ms   68 ms   51 ms   73 ms   60 ms   48 ms   50 ms   54 ms   83 ms   63 ms     62.50
-#7 norton            69 ms   71 ms   78 ms   62 ms   69 ms   70 ms   75 ms   73 ms   68 ms   71 ms     70.60
-#8 cleanbrowsing     83 ms   70 ms   62 ms   61 ms   75 ms   198 ms  65 ms   72 ms   61 ms   71 ms     81.80
-#9 yandex            108 ms  148 ms  93 ms   108 ms  113 ms  101 ms  112 ms  92 ms   94 ms   131 ms    110.00
-#10 adguard           89 ms   82 ms   64 ms   86 ms   85 ms   70 ms   84 ms   72 ms   76 ms   84 ms     79.20
-#11 neustar           86 ms   62 ms   71 ms   74 ms   70 ms   83 ms   66 ms   68 ms   70 ms   72 ms     72.20
-#12 comodo            89 ms   5092 ms 93 ms   99 ms   96 ms   85 ms   10106 ms80 ms   86 ms   5127 ms   2095.30
+                     test1    test2    test3    test4    test5    test6    test7    test8    test9   test10   Average 
+#1 cloudflare        66 ms    61 ms    73 ms    65 ms    60 ms    65 ms    64 ms    66 ms    75 ms    64 ms     65.90
+#2 level3            64 ms    59 ms    73 ms    74 ms    65 ms    85 ms    65 ms    73 ms    77 ms    60 ms     69.50
+#3 google            63 ms    55 ms    54 ms    74 ms    87 ms    75 ms    54 ms    95 ms    66 ms    64 ms     68.70
+#4 quad9             89 ms    80 ms    92 ms    66 ms    67 ms    82 ms    63 ms    72 ms    88 ms    67 ms     76.60
+#5 freenom           87 ms   124 ms    92 ms   111 ms   136 ms   250 ms   128 ms   338 ms   101 ms   177 ms    154.40
+#6 opendns           75 ms    68 ms    51 ms    73 ms    60 ms    48 ms    50 ms    54 ms    83 ms    63 ms     62.50
+#7 norton            69 ms    71 ms    78 ms    62 ms    69 ms    70 ms    75 ms    73 ms    68 ms    71 ms     70.60
+#8 cleanbrowsing     83 ms    70 ms    62 ms    61 ms    75 ms   198 ms    65 ms    72 ms    61 ms    71 ms     81.80
+#9 yandex           108 ms   148 ms    93 ms   108 ms   113 ms   101 ms   112 ms    92 ms    94 ms   131 ms    110.00
+#10 adguard          89 ms    82 ms    64 ms    86 ms    85 ms    70 ms    84 ms    72 ms    76 ms    84 ms     79.20
+#11 neustar          86 ms    62 ms    71 ms    74 ms    70 ms    83 ms    66 ms    68 ms    70 ms    72 ms     72.20
+#12 comodo           89 ms  5092 ms    93 ms    99 ms    96 ms    85 ms 10106 ms    80 ms    86 ms  5127 ms   2095.30
 ```

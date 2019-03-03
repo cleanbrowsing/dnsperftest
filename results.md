@@ -128,7 +128,7 @@ Results from tests done by our users. Feel free to add yours (including Country,
 ```
 
 ## South America
-<a name="#agentina-buenosaires"></a>
+<a name="agentina-buenosaires"></a>
 **Argentina, Buenos Aires, Residential**
 ```
                      test1   test2   test3   test4   test5   test6   test7   test8   test9   Average

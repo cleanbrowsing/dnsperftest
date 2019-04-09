@@ -1,0 +1,4 @@
+85.37.17.51#Telecom_pri
+85.38.28.97#Telecom_sec
+85.18.200.200#Fastweb_pri
+89.97.140.140#Fastweb_sec

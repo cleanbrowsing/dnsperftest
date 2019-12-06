@@ -3,6 +3,20 @@
 command -v bc > /dev/null || { echo "bc was not found. Please install bc."; exit 1; }
 { command -v drill > /dev/null && dig=drill; } || { command -v dig > /dev/null && dig=dig; } || { echo "dig was not found. Please install dnsutils."; exit 1; }
 
+TO_FILE=0
+if [ $# -eq 1 ]
+then
+    TO_FILE=1
+    OUTPUT_FILE=$1
+    if [ ! -f "$OUTPUT_FILE" ]
+    then
+        touch "$OUTPUT_FILE"
+    fi
+elif [ $# -gt 1 ]
+then
+    echo "Usage: ./dnstest.sh [file_path]"
+    exit 1;
+fi
 
 
 NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/\(.*\)/&#&/'`
@@ -25,15 +39,24 @@ PROVIDERS="
 # Domains to test. Duplicated domains are ok
 DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.com  wikipedia.org twitter.com gmail.com www.google.com whatsapp.com"
 
-
 totaldomains=0
-printf "%-18s" ""
-for d in $DOMAINS2TEST; do
-    totaldomains=$((totaldomains + 1))
-    printf "%-8s" "test$totaldomains"
-done
-printf "%-8s" "Average"
-echo ""
+if [ $TO_FILE -eq 0 ]
+then
+    printf "%-18s" ""
+    for d in $DOMAINS2TEST; do
+        totaldomains=$((totaldomains + 1))
+        printf "%-8s" "test$totaldomains"
+    done
+    printf "%-8s" "Average"
+    echo ""
+else
+    for d in $DOMAINS2TEST; do
+        totaldomains=$((totaldomains + 1))
+        printf "test%i," $totaldomains >> "$OUTPUT_FILE"
+    done
+    printf "Average,\n" >> "$OUTPUT_FILE"
+fi
+
 
 
 for p in $NAMESERVERS $PROVIDERS; do
@@ -41,7 +64,13 @@ for p in $NAMESERVERS $PROVIDERS; do
     pname=${p##*#}
     ftime=0
 
-    printf "%-18s" "$pname"
+    if [ $TO_FILE -eq 0 ]
+    then
+        printf "%-18s" "$pname"
+    else
+        printf "$pname" >> "$OUTPUT_FILE"
+    fi
+
     for d in $DOMAINS2TEST; do
         ttime=`$dig +tries=1 +time=2 +stats @$pip $d |grep "Query time:" | cut -d : -f 2- | cut -d " " -f 2`
         if [ -z "$ttime" ]; then
@@ -51,12 +80,24 @@ for p in $NAMESERVERS $PROVIDERS; do
 	        ttime=1
 	    fi
 
-        printf "%-8s" "$ttime ms"
+        if [ $TO_FILE -eq 0 ]
+        then
+            printf "%-8s" "$ttime ms"
+        else
+            printf "%i," $ttime >> "$OUTPUT_FILE"
+        fi
+
         ftime=$((ftime + ttime))
     done
     avg=`bc -lq <<< "scale=2; $ftime/$totaldomains"`
 
-    echo "  $avg"
+    if [ $TO_FILE -eq 0 ]
+    then    
+        echo "  $avg"
+    else
+        printf "%.2f,\n" "$avg" >> "$OUTPUT_FILE"
+    fi
+
 done
 
 

@@ -18,10 +18,18 @@ Includes by default:
 
 # Required 
 
-You need to install bc and dig. For Ubuntu:
+You need to install bc and dig. 
+
+For Ubuntu:
 
 ```
  $ sudo apt-get install bc dnsutils
+```
+
+For macOS using homebrew:
+
+```
+ $ brew install bc bind
 ```
 
 # Utilization

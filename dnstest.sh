@@ -7,20 +7,34 @@ command -v bc > /dev/null || { echo "bc was not found. Please install bc."; exit
 
 NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/\(.*\)/&#&/'`
 
-PROVIDERS="
+if [[ $(basename "$0") == *6* ]]; then
+	echo "Using providers of DNS over IPv6."
+	PROVIDERS="
+2606:4700:4700::1111#cloudflare
+2001:4860:4860::8888#google
+2620:fe::fe#quad9
+2620:119:35::35#opendns
+2a0d:2a00:1::1#cleanbrowsing
+2a02:6b8::feed:0ff#yandex
+2a00:5a60::ad1:0ff#adguard
+2610:a1:1018::3#neustar
+"
+else
+	echo "Using providers of DNS over IPv4."
+	PROVIDERS="
 1.1.1.1#cloudflare 
 4.2.2.1#level3 
 8.8.8.8#google 
 9.9.9.9#quad9 
 80.80.80.80#freenom 
 208.67.222.123#opendns 
-199.85.126.20#norton 
 185.228.168.168#cleanbrowsing 
 77.88.8.7#yandex 
 176.103.130.132#adguard 
 156.154.70.3#neustar 
 8.26.56.26#comodo
 "
+fi
 
 # Domains to test. Duplicated domains are ok
 DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.com  wikipedia.org twitter.com gmail.com www.google.com whatsapp.com"

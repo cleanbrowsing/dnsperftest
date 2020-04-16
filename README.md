@@ -1,6 +1,6 @@
 # DNS Performance Test
 
-Shell script to test the performance of the most popular DNS resolvers from your location.
+Shell scripts to test the performance of the most popular DNS resolvers from your location, over IPv4 or IPv6.
 
 Includes by default:
  * CloudFlare 1.1.1.1
@@ -9,12 +9,11 @@ Includes by default:
  * Quad9 9.9.9.9
  * Freenom 80.80.80.80
  * OpenDNS
- * Norton
  * CleanBrowsing
  * Yandex
  * AdGuard
  * Neustar
- * Comodo
+ * Comodo (IPv4 only)
 
 # Required 
 
@@ -30,12 +29,12 @@ You need to install bc and dig. For Ubuntu:
  $ git clone --depth=1 https://github.com/cleanbrowsing/dnsperftest/
  $ cd dnsperftest
  $ bash ./dnstest.sh 
+Using providers of DNS over IPv4.
                test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
 cloudflare     1 ms    1 ms    1 ms    2 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.10
 google         22 ms   1 ms    4 ms    24 ms   1 ms    19 ms   3 ms    56 ms   21 ms   21 ms     17.20
 quad9          10 ms   19 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   55 ms     15.40
 opendns        39 ms   2 ms    2 ms    20 ms   2 ms    72 ms   2 ms    39 ms   39 ms   3 ms      22.00
-norton         2 ms    2 ms    2 ms    2 ms    1 ms    2 ms    2 ms    1 ms    2 ms    2 ms      1.80
 cleanbrowsing  11 ms   14 ms   11 ms   11 ms   10 ms   10 ms   11 ms   36 ms   11 ms   13 ms     13.80
 yandex         175 ms  209 ms  175 ms  181 ms  188 ms  179 ms  178 ms  179 ms  177 ms  208 ms    184.90
 adguard        200 ms  200 ms  200 ms  199 ms  202 ms  200 ms  202 ms  200 ms  199 ms  248 ms    205.00
@@ -43,10 +42,27 @@ neustar        2 ms    2 ms    2 ms    2 ms    1 ms    2 ms    2 ms    2 ms    2
 comodo         21 ms   22 ms   22 ms   22 ms   22 ms   22 ms   22 ms   21 ms   22 ms   24 ms     22.00
 ```
 
+Use `dnstest6.sh` to test DNS over IPv6 instead:
+
+```
+ $ bash ./dnstest6.sh
+Using providers of DNS over IPv6.
+               test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
+cloudflare     1 ms    1 ms    1 ms    2 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.10
+google         22 ms   1 ms    4 ms    24 ms   1 ms    19 ms   3 ms    56 ms   21 ms   21 ms     17.20
+quad9          10 ms   19 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   55 ms     15.40
+opendns        39 ms   2 ms    2 ms    20 ms   2 ms    72 ms   2 ms    39 ms   39 ms   3 ms      22.00
+cleanbrowsing  11 ms   14 ms   11 ms   11 ms   10 ms   10 ms   11 ms   36 ms   11 ms   13 ms     13.80
+yandex         175 ms  209 ms  175 ms  181 ms  188 ms  179 ms  178 ms  179 ms  177 ms  208 ms    184.90
+adguard        200 ms  200 ms  200 ms  199 ms  202 ms  200 ms  202 ms  200 ms  199 ms  248 ms    205.00
+neustar        2 ms    2 ms    2 ms    2 ms    1 ms    2 ms    2 ms    2 ms    2 ms    2 ms      1.90
+```
+
 To sort with the fastest first, add `sort -k 22 -n` at the end of the command:
 
 ```
   $ bash ./dnstest.sh |sort -k 22 -n
+Using providers of DNS over IPv4.
                test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
 cloudflare     1 ms    1 ms    1 ms    4 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.30
 norton         2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms    2 ms      2.00

@@ -26,6 +26,7 @@ PROVIDERS="
 91.239.100.100#uncensoreddns
 156.154.70.1#ultrarecursivedns
 198.101.242.72#alternatedns
+45.90.28.0#nextdns
 "
 
 # Domains to test. Duplicated domains are ok

@@ -20,6 +20,13 @@ PROVIDERS="
 176.103.130.132#adguard 
 156.154.70.3#neustar 
 8.26.56.26#comodo
+84.200.69.80#dns.watch
+64.6.65.6#verisign
+13.239.157.177#opennic
+91.239.100.100#uncensoreddns
+156.154.70.1#ultrarecursivedns
+198.101.242.72#alternatedns
+45.90.28.0#nextdns
 "
 
 # Domains to test. Duplicated domains are ok

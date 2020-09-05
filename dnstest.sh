@@ -9,9 +9,12 @@ NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/
 
 PROVIDERSV4="
 1.1.1.1#cloudflare 
+1.0.0.1#cloudflare2
 4.2.2.1#level3 
 8.8.8.8#google 
+8.8.4.4#google2
 9.9.9.9#quad9 
+149.112.112.112#quad9_2
 80.80.80.80#freenom 
 208.67.222.123#opendns 
 199.85.126.20#norton 
@@ -25,8 +28,11 @@ PROVIDERSV4="
 
 PROVIDERSV6="
 2606:4700:4700::1111#cloudflare-v6
+2606:4700:4700::1001#cloudflare2-v6
 2001:4860:4860::8888#google-v6
+2001:4860:4860::8844#google2-v6
 2620:fe::fe#quad9-v6
+2620:fe::fe:9#quad9_2-v6
 2620:119:35::35#opendns-v6
 2a0d:2a00:1::1#cleanbrowsing-v6
 2a02:6b8::feed:0ff#yandex-v6

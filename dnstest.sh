@@ -11,7 +11,9 @@ if [[ $(basename "$0") == *6* ]]; then
 	echo "Using providers of DNS over IPv6."
 	PROVIDERS="
 2606:4700:4700::1111#cloudflare
+2606:4700:4700::1001#cloudflare2
 2001:4860:4860::8888#google
+2001:4860:4860::8844#google2
 2620:fe::fe#quad9
 2620:119:35::35#opendns
 2a0d:2a00:1::1#cleanbrowsing
@@ -23,8 +25,10 @@ else
 	echo "Using providers of DNS over IPv4."
 	PROVIDERS="
 1.1.1.1#cloudflare 
+1.0.0.1#cloudflare2
 4.2.2.1#level3 
 8.8.8.8#google 
+8.8.4.4#google2
 9.9.9.9#quad9 
 80.80.80.80#freenom 
 208.67.222.123#opendns 

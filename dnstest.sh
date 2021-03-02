@@ -15,6 +15,7 @@ if [[ $(basename "$0") == *6* ]]; then
 2001:4860:4860::8888#google
 2001:4860:4860::8844#google2
 2620:fe::fe#quad9
+2620:fe::fe:9#quad9_2
 2620:119:35::35#opendns
 2a0d:2a00:1::1#cleanbrowsing
 2a02:6b8::feed:0ff#yandex
@@ -30,6 +31,7 @@ else
 8.8.8.8#google 
 8.8.4.4#google2
 9.9.9.9#quad9 
+149.112.112.112#quad9_2
 80.80.80.80#freenom 
 208.67.222.123#opendns 
 185.228.168.168#cleanbrowsing 

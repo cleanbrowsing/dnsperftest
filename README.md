@@ -9,7 +9,6 @@ Includes by default:
  * Quad9 9.9.9.9
  * Freenom 80.80.80.80
  * OpenDNS
- * Norton
  * CleanBrowsing
  * Yandex
  * AdGuard

@@ -10,6 +10,8 @@ NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/
 if [[ $(basename "$0") == *6* ]]; then
 	echo "Using providers of DNS over IPv6."
 	PROVIDERS="
+2001:558:feed::1#comcast
+2001:558:feed::2#comcast2
 2606:4700:4700::1111#cloudflare
 2606:4700:4700::1001#cloudflare2
 2001:4860:4860::8888#google
@@ -25,6 +27,8 @@ if [[ $(basename "$0") == *6* ]]; then
 else
 	echo "Using providers of DNS over IPv4."
 	PROVIDERS="
+75.75.75.75#comcast
+75.75.76.76#comcast2
 1.1.1.1#cloudflare 
 1.0.0.1#cloudflare2
 4.2.2.1#level3 

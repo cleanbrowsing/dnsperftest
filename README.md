@@ -15,6 +15,9 @@ Includes by default:
  * AdGuard
  * Neustar
  * Comodo
+ * SafeDNS
+ * NextDNS
+ * DNSFilter
 
 # Required 
 

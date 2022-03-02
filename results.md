@@ -11,6 +11,7 @@ Results from tests done by our users. Feel free to add yours (including Country,
   
 ## Europe
   * [France, Paris, OVH Datacenter](#france-paris-ovh)
+  * [Germany, Karlsruhe, Residential](#germany-karlsruhe)
 
 ## South America
   * [Argentina, Buenos Aires, Residential](#agentina-buenosaires)
@@ -123,6 +124,27 @@ Results from tests done by our users. Feel free to add yours (including Country,
 #10 yandex            39 ms   38 ms   39 ms   38 ms   47 ms   39 ms   36 ms   42 ms   35 ms   78 ms     43.10
 #11 comodo            10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   417 ms    50.70
 #12 adguard           55 ms   125 ms  54 ms   54 ms   66 ms   61 ms   58 ms   54 ms   54 ms   54 ms     63.50
+```
+
+<a name="germany-karlsruhe"></a>
+**Germany, Karlsruhe, Residential**
+```
+                  test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average
+127.0.0.1         1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.00
+45.90.30.39       15 ms   11 ms   15 ms   15 ms   15 ms   19 ms   11 ms   15 ms   15 ms   15 ms     14.60
+84.200.69.80      15 ms   11 ms   15 ms   15 ms   11 ms   11 ms   15 ms   19 ms   23 ms   19 ms     15.40
+cloudflare        27 ms   15 ms   19 ms   11 ms   15 ms   19 ms   11 ms   11 ms   27 ms   15 ms     17.00
+level3            15 ms   11 ms   11 ms   15 ms   19 ms   11 ms   15 ms   19 ms   23 ms   15 ms     15.40
+google            19 ms   23 ms   19 ms   35 ms   23 ms   23 ms   19 ms   31 ms   23 ms   23 ms     23.80
+quad9             1000 ms 1000 ms 31 ms   1000 ms 23 ms   1000 ms 19 ms   1000 ms 1000 ms 1000 ms   707.30
+freenom           43 ms   1000 ms 1000 ms 1000 ms 671 ms  1000 ms 1000 ms 1000 ms 1000 ms 1000 ms   871.40
+opendns           23 ms   19 ms   19 ms   23 ms   15 ms   95 ms   11 ms   23 ms   23 ms   15 ms     26.60
+norton            15 ms   15 ms   11 ms   15 ms   19 ms   23 ms   27 ms   19 ms   19 ms   23 ms     18.60
+cleanbrowsing     15 ms   19 ms   15 ms   27 ms   19 ms   19 ms   19 ms   11 ms   27 ms   11 ms     18.20
+yandex            51 ms   51 ms   55 ms   43 ms   59 ms   55 ms   55 ms   55 ms   51 ms   71 ms     54.60
+adguard           135 ms  119 ms  119 ms  119 ms  115 ms  111 ms  115 ms  119 ms  115 ms  119 ms    118.60
+neustar           19 ms   27 ms   23 ms   31 ms   39 ms   19 ms   27 ms   23 ms   23 ms   23 ms     25.40
+comodo            11 ms   15 ms   15 ms   27 ms   15 ms   19 ms   15 ms   15 ms   19 ms   15 ms     16.60
 ```
 
 ## South America

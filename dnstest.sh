@@ -97,7 +97,8 @@ for p in $NAMESERVERS $providerstotest; do
     done
     avg=`bc -l <<< "scale=2; $ftime/$totaldomains"`
 
-    echo "  $avg"
+    printf "%7s" "$avg"
+    echo ""
 done
 
 

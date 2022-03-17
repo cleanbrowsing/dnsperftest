@@ -16,9 +16,9 @@ PROVIDERSV4="
 208.67.222.123#opendns 
 199.85.126.20#norton 
 185.228.168.168#cleanbrowsing 
-77.88.8.7#yandex 
-176.103.130.132#adguard 
-156.154.70.3#neustar 
+80.80.80.80#freenom
+4.2.2.4#level3 
+80.78.66.66#abcom
 8.26.56.26#comodo
 45.90.28.202#nextdns
 "
@@ -64,7 +64,8 @@ fi
     
 
 # Domains to test. Duplicated domains are ok
-DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.com  wikipedia.org twitter.com gmail.com www.google.com whatsapp.com"
+#DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.com  wikipedia.org twitter.com gmail.com www.google.com whatsapp.com"
+DOMAINS2TEST=$(head opendns-top-domains.txt)
 
 
 totaldomains=0

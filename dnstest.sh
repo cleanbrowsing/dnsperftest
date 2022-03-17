@@ -42,7 +42,7 @@ fi
 providerstotest=$PROVIDERSV4
 
 if [ "$1" = "ipv6" ]; then
-    if [ "$hasipv6" = "" ]; then
+    if [ -z "$hasipv6" ]; then
         echo "error: IPv6 support not found. Unable to do the ipv6 test."; exit 1;
     fi
     providerstotest=$PROVIDERSV6

@@ -8,6 +8,7 @@ Results from tests done by our users. Feel free to add yours (including Country,
   * [USA, California, San Francisco, Digital Ocean Datacenter](#usa-sanfrancisco-digitalocean)
   * [USA, Texas, Dallas, Linode](#usa-dallas-linode)
   * [Canada, NB, Fredericton, Bell Aliant](#canada-nb-fredericton-bell)
+  * [Mexico, NL, Monterrey, Axtel](#mexico-nl-monterrey-axtel)
   
 ## Europe
   * [France, Paris, OVH Datacenter](#france-paris-ovh)
@@ -106,6 +107,24 @@ Results from tests done by our users. Feel free to add yours (including Country,
 #10 opendns        172 ms  63 ms   245 ms  158 ms  146 ms  159 ms  279 ms  140 ms  163 ms  167.50
 ```
 
+
+<a name="mexico-nl-monterrey-axtel"></a>
+**Mexico, NL, Monterrey, Axtel**
+```
+                    test1    test2   test3  test4    test5  test6    test7  test8    test9  test10    Average  
+#1 cloudflare        6 ms    7 ms    7 ms    7 ms    9 ms    7 ms    6 ms    6 ms    6 ms    8 ms      6.90
+#2 level3            20 ms   19 ms   20 ms   20 ms   20 ms   19 ms   20 ms   20 ms   20 ms   19 ms     19.70
+#3 google            32 ms   32 ms   76 ms   64 ms   70 ms   31 ms   34 ms   64 ms   33 ms   34 ms     47.00
+#4 quad9             30 ms   30 ms   33 ms   29 ms   33 ms   32 ms   32 ms   28 ms   28 ms   270 ms    54.50
+#5 freenom           31 ms   31 ms   30 ms   31 ms   32 ms   31 ms   31 ms   31 ms   31 ms   31 ms     31.00
+#6 opendns           18 ms   18 ms   19 ms   27 ms   19 ms   20 ms   18 ms   24 ms   26 ms   19 ms     20.80
+#7 norton            214 ms  20 ms   20 ms   21 ms   20 ms   20 ms   19 ms   20 ms   20 ms   21 ms     39.50
+#8 cleanbrowsing     23 ms   22 ms   25 ms   21 ms   22 ms   311 ms  30 ms   23 ms   22 ms   32 ms     53.10
+#9 yandex            182 ms  178 ms  187 ms  180 ms  183 ms  185 ms  181 ms  182 ms  187 ms  203 ms    184.80
+#10 adguard           56 ms   71 ms   56 ms   57 ms   61 ms   57 ms   1000 ms 72 ms   61 ms   82 ms     157.30
+#11 neustar           20 ms   20 ms   19 ms   21 ms   21 ms   19 ms   19 ms   20 ms   20 ms   19 ms     19.80
+#12 comodo            22 ms   59 ms   19 ms   22 ms   23 ms   22 ms   20 ms   28 ms   21 ms   22 ms     25.80
+```
 
 ## Europe Results
 <a name="france-paris-ovh"></a>

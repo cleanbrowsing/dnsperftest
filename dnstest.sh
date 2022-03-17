@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-command -v bc > /dev/null || { echo "bc was not found. Please install bc."; exit 1; }
+command -v expr > /dev/null || { echo "expr was not found. Please install expr."; exit 1; }
 { command -v drill > /dev/null && dig=drill; } || { command -v dig > /dev/null && dig=dig; } || { echo "dig was not found. Please install dnsutils."; exit 1; }
 
 
@@ -39,6 +39,7 @@ echo ""
 
 for p in $NAMESERVERS $PROVIDERS; do
     pip=${p%%#*}
+    [[ "$pip" =~ [:] ]] && pip="${pip%%:*} -p ${pip##*:}"
     pname=${p##*#}
     ftime=0
 
@@ -55,7 +56,7 @@ for p in $NAMESERVERS $PROVIDERS; do
         printf "%-8s" "$ttime ms"
         ftime=$((ftime + ttime))
     done
-    avg=`bc -lq <<< "scale=2; $ftime/$totaldomains"`
+    avg=$(expr $ftime / $totaldomains)
 
     echo "  $avg"
 done

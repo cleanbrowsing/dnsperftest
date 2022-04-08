@@ -17,7 +17,9 @@ PROVIDERSV4="
 199.85.126.20#norton 
 185.228.168.168#cleanbrowsing 
 77.88.8.7#yandex 
-176.103.130.132#adguard 
+94.140.14.14#adguard
+94.140.14.140#adguard-nofilter
+94.140.14.15#adguard-family
 156.154.70.3#neustar 
 8.26.56.26#comodo
 45.90.28.202#nextdns
@@ -30,7 +32,9 @@ PROVIDERSV6="
 2620:119:35::35#opendns-v6
 2a0d:2a00:1::1#cleanbrowsing-v6
 2a02:6b8::feed:0ff#yandex-v6
-2a00:5a60::ad1:0ff#adguard-v6
+2a10:50c0::ad1:ff#adguard-v6
+2a10:50c0::1:ff#adguard-v6-nofilter
+2a10:50c0::bad1:ff#adguard-v6-family
 2610:a1:1018::3#neustar-v6
 "
 

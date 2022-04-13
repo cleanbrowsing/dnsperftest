@@ -68,10 +68,10 @@ DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.
 
 
 totaldomains=0
-printf "%-21s" ""
+printf "%-21s" "DNS Name / Tests >"
 for d in $DOMAINS2TEST; do
     totaldomains=$((totaldomains + 1))
-    printf "%-8s" "test$totaldomains"
+    printf "%-8s" "$totaldomains"
 done
 printf "%-8s" "Average"
 echo ""

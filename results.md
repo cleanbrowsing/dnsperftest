@@ -21,6 +21,9 @@ Results from tests done by our users. Feel free to add yours (including Country,
 ## Africa
   * [Tunisia, Ariana, El Ghazela, Orange Tunisie](#tn-elghazela-orange)
   
+## Asia
+  * [India-Chennai-BSNL](#India-Chennai-BSNL)
+
 ## North America Results
 
 <a name="usa-san-diego-frontier"></a>
@@ -220,4 +223,25 @@ comodo            11 ms   15 ms   15 ms   27 ms   15 ms   19 ms   15 ms   15 ms 
 #12 yandex          108 ms   148 ms    93 ms   108 ms   113 ms   101 ms   112 ms    92 ms    94 ms   131 ms    110.00
 #11 freenom          87 ms   124 ms    92 ms   111 ms   136 ms   250 ms   128 ms   338 ms   101 ms   177 ms    154.40
 #12 comodo           89 ms  5092 ms    93 ms    99 ms    96 ms    85 ms 10106 ms    80 ms    86 ms  5127 ms   2095.30
+```
+
+## Asia Results
+<a name="India-Chennai-BSNL"></a>
+**India, Chennai, BSNL**
+```
+                     test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
+127.0.0.53           11 ms   11 ms   35 ms   95 ms   11 ms   31 ms   1 ms    95 ms   1 ms    19 ms     31.00
+cloudflare           31 ms   31 ms   31 ms   31 ms   31 ms   27 ms   35 ms   31 ms   31 ms   27 ms     30.60
+level3               203 ms  203 ms  267 ms  211 ms  199 ms  263 ms  291 ms  295 ms  199 ms  199 ms    233.00
+google               35 ms   11 ms   31 ms   15 ms   67 ms   7 ms    7 ms    171 ms  11 ms   7 ms      36.20
+quad9                47 ms   51 ms   47 ms   51 ms   47 ms   51 ms   47 ms   43 ms   47 ms   47 ms     47.80
+freenom              343 ms  255 ms  327 ms  291 ms  275 ms  307 ms  599 ms  291 ms  291 ms  295 ms    327.40
+opendns              39 ms   35 ms   91 ms   39 ms   31 ms   35 ms   35 ms   95 ms   31 ms   35 ms     46.60
+norton               55 ms   55 ms   51 ms   55 ms   55 ms   51 ms   59 ms   51 ms   55 ms   171 ms    65.80
+cleanbrowsing        311 ms  291 ms  291 ms  295 ms  287 ms  291 ms  291 ms  291 ms  255 ms  331 ms    293.40
+yandex               291 ms  395 ms  291 ms  307 ms  275 ms  395 ms  395 ms  395 ms  395 ms  207 ms    334.60
+adguard              275 ms  283 ms  303 ms  255 ms  331 ms  291 ms  255 ms  331 ms  291 ms  251 ms    286.60
+neustar              35 ms   35 ms   51 ms   35 ms   39 ms   39 ms   39 ms   63 ms   59 ms   95 ms     49.00
+comodo               215 ms  219 ms  235 ms  223 ms  259 ms  215 ms  271 ms  219 ms  263 ms  263 ms    238.20
+nextdns              31 ms   31 ms   31 ms   31 ms   27 ms   31 ms   27 ms   31 ms   31 ms   31 ms     30.20
 ```

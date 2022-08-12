@@ -8,15 +8,19 @@ Results from tests done by our users. Feel free to add yours (including Country,
   * [USA, California, San Francisco, Digital Ocean Datacenter](#usa-sanfrancisco-digitalocean)
   * [USA, Texas, Dallas, Linode](#usa-dallas-linode)
   * [Canada, NB, Fredericton, Bell Aliant](#canada-nb-fredericton-bell)
+  * [Mexico, NL, Monterrey, Axtel](#mexico-nl-monterrey-axtel)
   
 ## Europe
   * [France, Paris, OVH Datacenter](#france-paris-ovh)
+  * [Germany, Karlsruhe, Residential](#germany-karlsruhe)
 
 ## South America
-  * [Argentina, Buenos Aires, Residential](#agentina-buenosaires)
+  * [Argentina, Buenos Aires, Residential](#argentina-buenosaires)
   * [Brazil, Sao Paulo, AWS Datacenter](#brazil-saopaulo-aws)
-  
 
+## Africa
+  * [Tunisia, Ariana, El Ghazela, Orange Tunisie](#tn-elghazela-orange)
+  
 ## North America Results
 
 <a name="usa-san-diego-frontier"></a>
@@ -106,6 +110,24 @@ Results from tests done by our users. Feel free to add yours (including Country,
 ```
 
 
+<a name="mexico-nl-monterrey-axtel"></a>
+**Mexico, NL, Monterrey, Axtel**
+```
+                    test1    test2   test3  test4    test5  test6    test7  test8    test9  test10    Average  
+#1 cloudflare        6 ms    7 ms    7 ms    7 ms    9 ms    7 ms    6 ms    6 ms    6 ms    8 ms      6.90
+#2 level3            20 ms   19 ms   20 ms   20 ms   20 ms   19 ms   20 ms   20 ms   20 ms   19 ms     19.70
+#3 google            32 ms   32 ms   76 ms   64 ms   70 ms   31 ms   34 ms   64 ms   33 ms   34 ms     47.00
+#4 quad9             30 ms   30 ms   33 ms   29 ms   33 ms   32 ms   32 ms   28 ms   28 ms   270 ms    54.50
+#5 freenom           31 ms   31 ms   30 ms   31 ms   32 ms   31 ms   31 ms   31 ms   31 ms   31 ms     31.00
+#6 opendns           18 ms   18 ms   19 ms   27 ms   19 ms   20 ms   18 ms   24 ms   26 ms   19 ms     20.80
+#7 norton            214 ms  20 ms   20 ms   21 ms   20 ms   20 ms   19 ms   20 ms   20 ms   21 ms     39.50
+#8 cleanbrowsing     23 ms   22 ms   25 ms   21 ms   22 ms   311 ms  30 ms   23 ms   22 ms   32 ms     53.10
+#9 yandex            182 ms  178 ms  187 ms  180 ms  183 ms  185 ms  181 ms  182 ms  187 ms  203 ms    184.80
+#10 adguard           56 ms   71 ms   56 ms   57 ms   61 ms   57 ms   1000 ms 72 ms   61 ms   82 ms     157.30
+#11 neustar           20 ms   20 ms   19 ms   21 ms   21 ms   19 ms   19 ms   20 ms   20 ms   19 ms     19.80
+#12 comodo            22 ms   59 ms   19 ms   22 ms   23 ms   22 ms   20 ms   28 ms   21 ms   22 ms     25.80
+```
+
 ## Europe Results
 <a name="france-paris-ovh"></a>
 **France, Paris, OVH Datacenter**
@@ -123,6 +145,27 @@ Results from tests done by our users. Feel free to add yours (including Country,
 #10 yandex            39 ms   38 ms   39 ms   38 ms   47 ms   39 ms   36 ms   42 ms   35 ms   78 ms     43.10
 #11 comodo            10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   10 ms   417 ms    50.70
 #12 adguard           55 ms   125 ms  54 ms   54 ms   66 ms   61 ms   58 ms   54 ms   54 ms   54 ms     63.50
+```
+
+<a name="germany-karlsruhe"></a>
+**Germany, Karlsruhe, Residential**
+```
+                  test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average
+127.0.0.1         1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.00
+45.90.30.39       15 ms   11 ms   15 ms   15 ms   15 ms   19 ms   11 ms   15 ms   15 ms   15 ms     14.60
+84.200.69.80      15 ms   11 ms   15 ms   15 ms   11 ms   11 ms   15 ms   19 ms   23 ms   19 ms     15.40
+cloudflare        27 ms   15 ms   19 ms   11 ms   15 ms   19 ms   11 ms   11 ms   27 ms   15 ms     17.00
+level3            15 ms   11 ms   11 ms   15 ms   19 ms   11 ms   15 ms   19 ms   23 ms   15 ms     15.40
+google            19 ms   23 ms   19 ms   35 ms   23 ms   23 ms   19 ms   31 ms   23 ms   23 ms     23.80
+quad9             1000 ms 1000 ms 31 ms   1000 ms 23 ms   1000 ms 19 ms   1000 ms 1000 ms 1000 ms   707.30
+freenom           43 ms   1000 ms 1000 ms 1000 ms 671 ms  1000 ms 1000 ms 1000 ms 1000 ms 1000 ms   871.40
+opendns           23 ms   19 ms   19 ms   23 ms   15 ms   95 ms   11 ms   23 ms   23 ms   15 ms     26.60
+norton            15 ms   15 ms   11 ms   15 ms   19 ms   23 ms   27 ms   19 ms   19 ms   23 ms     18.60
+cleanbrowsing     15 ms   19 ms   15 ms   27 ms   19 ms   19 ms   19 ms   11 ms   27 ms   11 ms     18.20
+yandex            51 ms   51 ms   55 ms   43 ms   59 ms   55 ms   55 ms   55 ms   51 ms   71 ms     54.60
+adguard           135 ms  119 ms  119 ms  119 ms  115 ms  111 ms  115 ms  119 ms  115 ms  119 ms    118.60
+neustar           19 ms   27 ms   23 ms   31 ms   39 ms   19 ms   27 ms   23 ms   23 ms   23 ms     25.40
+comodo            11 ms   15 ms   15 ms   27 ms   15 ms   19 ms   15 ms   15 ms   19 ms   15 ms     16.60
 ```
 
 ## South America
@@ -158,4 +201,23 @@ Results from tests done by our users. Feel free to add yours (including Country,
 #10 quad9             176 ms  176 ms  175 ms  175 ms  176 ms  175 ms  175 ms  175 ms  176 ms  175.40
 #11 yandex            240 ms  272 ms  243 ms  247 ms  242 ms  236 ms  237 ms  241 ms  236 ms  243.10
 #12 adguard           249 ms  245 ms  247 ms  250 ms  249 ms  244 ms  244 ms  252 ms  259 ms  248.70
+```
+
+## Africa Results
+<a name="tn-elghazela-orange"></a>
+**Tunisia, Ariana, El Ghazela, Orange Tunisie**
+```
+                     test1    test2    test3    test4    test5    test6    test7    test8    test9   test10   Average 
+#1 opendns           75 ms    68 ms    51 ms    73 ms    60 ms    48 ms    50 ms    54 ms    83 ms    63 ms     62.50
+#2 cloudflare        66 ms    61 ms    73 ms    65 ms    60 ms    65 ms    64 ms    66 ms    75 ms    64 ms     65.90
+#3 google            63 ms    55 ms    54 ms    74 ms    87 ms    75 ms    54 ms    95 ms    66 ms    64 ms     68.70
+#4 level3            64 ms    59 ms    73 ms    74 ms    65 ms    85 ms    65 ms    73 ms    77 ms    60 ms     69.50
+#5 norton            69 ms    71 ms    78 ms    62 ms    69 ms    70 ms    75 ms    73 ms    68 ms    71 ms     70.60
+#6 neustar           86 ms    62 ms    71 ms    74 ms    70 ms    83 ms    66 ms    68 ms    70 ms    72 ms     72.20
+#7 quad9             89 ms    80 ms    92 ms    66 ms    67 ms    82 ms    63 ms    72 ms    88 ms    67 ms     76.60
+#8 adguard           89 ms    82 ms    64 ms    86 ms    85 ms    70 ms    84 ms    72 ms    76 ms    84 ms     79.20
+#9 cleanbrowsing     83 ms    70 ms    62 ms    61 ms    75 ms   198 ms    65 ms    72 ms    61 ms    71 ms     81.80
+#12 yandex          108 ms   148 ms    93 ms   108 ms   113 ms   101 ms   112 ms    92 ms    94 ms   131 ms    110.00
+#11 freenom          87 ms   124 ms    92 ms   111 ms   136 ms   250 ms   128 ms   338 ms   101 ms   177 ms    154.40
+#12 comodo           89 ms  5092 ms    93 ms    99 ms    96 ms    85 ms 10106 ms    80 ms    86 ms  5127 ms   2095.30
 ```

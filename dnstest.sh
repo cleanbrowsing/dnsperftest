@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 command -v bc > /dev/null || { echo "bc was not found. Please install bc."; exit 1; }
-{ command -v drill > /dev/null && dig=drill; } || { command -v dig > /dev/null && dig=dig; } || { echo "dig was not found. Please install dnsutils."; exit 1; }
+command -v dig > /dev/null || { echo "dig was not found. Please install dig."; exit 1; }
 
 
 mapfile -t PROVIDERS< <(grep -r '^nameserver' /etc/resolv.conf | cut -d " " -f 2 | sed 's/\(.*\)/&#&/')
@@ -26,7 +26,6 @@ DOMAINS2TEST=(
   wikipedia.org twitter.com gmail.com www.google.com whatsapp.com
 )
 
-
 totaldomains=0
 printf "%-18s" ""
 for d in "${DOMAINS2TEST[@]}"; do
@@ -48,7 +47,7 @@ for p in "${PROVIDERS[@]}"; do
         if [ -z "$ttime" ]; then
           #let's have time out be 1s = 1000ms
           ttime=1000
-        elif [ "x$ttime" = "x0" ]; then
+        elif [ "$ttime" -eq 0  ]; then
           ttime=1
       fi
 

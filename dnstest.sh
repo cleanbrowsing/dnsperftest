@@ -37,9 +37,9 @@ if LOCALTEST=$(netstat -tulpnW | grep "\:53\b" | grep "tcp\b" | grep "LISTEN"); 
   NAMESERVERS=("${LOCALHOST}" "${NAMESERVERS[@]}")
 fi
 # SANITIZE NAMESERVERS ARRAY
-shopt -s extglob                                       # turn on extended glob
-NAMESERVERS=( "${NAMESERVERS[@]/#+([[:blank:]])/}" )   # remove leading space/tab from each element
-NAMESERVERS=( "${NAMESERVERS[@]/%+([[:blank:]])/}" )   # remove trailing space/tab from each element
+shopt -s extglob                                           # turn on extended glob
+NAMESERVERS=("${NAMESERVERS[@]/#+([[:blank:]])/}")         # remove leading space/tab from each element
+NAMESERVERS=("${NAMESERVERS[@]/%+([[:blank:]])/}")         # remove trailing space/tab from each element
 
 # BUILD LIST OF IPV4 DNS PROVIDERS
 PROVIDERSV4="
@@ -82,6 +82,8 @@ PROVIDERSV4="
    199.85.127.10#NortonCS/2 
     195.46.39.39#SafeDNS/1
     195.46.39.40#SafeDNS/2
+  91.239.100.100#UncensoredDNS/1
+    89.233.43.71#UncensoredDNS/2
        64.6.64.6#Verisign/1
        64.6.65.6#Verisign/2
        77.88.8.8#Yandex/1 
@@ -119,6 +121,8 @@ PROVIDERSV6="
         2a07:a8c1::11:b227#NextDNS/2-v6
        2001:67c:2778::3939#SafeDNS/1-v6
        2001:67c:2778::3939#SafeDNS/2-v6
+           2001:67c:28a4::#UncensoredDNS/1
+          2a01:3a0:53:53::#UncensoredDNS/2
         2a02:6b8::feed:0ff#Yandex/1-v6 
     2a02:6b8:0:1::feed:0ff#Yandex/2-v6
 "
@@ -127,81 +131,88 @@ IFS=$'\n' PROVIDERSV6=($(sort -t "#" -k 2,2 <<<"${PROVIDERSV6[@]}")); unset IFS
 
 # BUILD LIST OF DOMAINS TO TEST AGAINST
 DOMAINS2TEST="
-# TOP 9 WEBSITES 2022
+# 13 TESTS OR LESS SHOULD FIT WITHIN 80 CHARACTER TERMINAL DISPLAY
   www.google.com
   www.youtube.com
   www.facebook.com
   www.amazon.com
   www.reddit.com
   www.apple.com
-  www.pornhub.com
   www.yahoo.com
   www.wikipedia.org
+  www.twitter.com
+  www.paypal.com
+  docker.io
+  github.com
+  gmail.com
 
-# OTHER TOP WEBSITES 2022
-# www.twitter.com
-# www.paypal.com
-# www.xvideos.com
-# www.instagram.com
+# OTHER TOP/POPULAR WEBSITES TO TEST AGAINST
 # www.bing.com
 # www.fandom.com
 # www.microsoftonline.com
 # www.walmart.com
-# www.spankbang.com
-# www.twitch.tv
-# www.tiktok.com
-# www.linkedin.com
 # www.duckduckgo.com
 # www.weather.com
 # www.indeed.com
 # www.qccerttest.com
 # www.quora.com
 # www.ebay.com
-# www.xnxx.com
 # www.cnn.com
 # www.espn.com
-# www.xhamster.com
 # www.etsy.com
 # www.nytimes.com
 # www.imdb.com
-# www.redd.it
 # www.usps.com
 # www.office.com
 # www.microsoft.com
 # www.zillow.com
 # www.live.com
+# www.plex.tv
+
+# SOCIAL NETWORKING SITES
+# www.instagram.com
+# www.twitch.tv
+# www.tiktok.com
+# www.linkedin.com
+
+# PORN SITES
+# www.pornhub.com
+# www.xvideos.com
+# www.xnxx.com
+# www.spankbang.com
+# www.xhamster.com
 "
 # SORT DOMAINS2TEST ARRAY
 IFS=$'\n' DOMAINS2TEST=($(sort -u <<<"${DOMAINS2TEST[@]}")); unset IFS
 
 # SANITIZE DOMAINS2TEST ARRAY
-shopt -s extglob                                               # turn on extended glob
-DOMAINS2TEST=( "${DOMAINS2TEST[@]/#+([[:blank:]])/}" )   # remove leading space/tab from each element
-DOMAINS2TEST=( "${DOMAINS2TEST[@]/%+([[:blank:]])/}" )   # remove trailing space/tab from each element
+shopt -s extglob                                           # turn on extended glob
+DOMAINS2TEST=("${DOMAINS2TEST[@]/#+([[:blank:]])/}")       # remove leading space/tab from each element
+DOMAINS2TEST=("${DOMAINS2TEST[@]/%+([[:blank:]])/}")       # remove trailing space/tab from each element
 
 if [ "$1" = "ipv6" ]; then
-  providerstotest=("${PROVIDERSV6[@]}")
+  PROVIDERSTOTEST=("${PROVIDERSV6[@]}")
 elif [ "$1" = "ipv4" ]; then
-  providerstotest=("${PROVIDERSV4[@]}")
+  PROVIDERSTOTEST=("${PROVIDERSV4[@]}")
 elif [ "$1" = "all" ]; then
-    providerstotest=("${PROVIDERSV4[@]}" "${PROVIDERSV6[@]}")
+    PROVIDERSTOTEST=("${PROVIDERSV4[@]}" "${PROVIDERSV6[@]}")
 else
-  providerstotest=("${PROVIDERSV4[@]}")
+  PROVIDERSTOTEST=("${PROVIDERSV4[@]}")
 fi
 if [ "$1" = "host" ]; then
-  providerstotest=("${NAMESERVERS[@]}")
+  PROVIDERSTOTEST=("${NAMESERVERS[@]}")
 elif [ "$1" = "-host" ]; then
-  providerstotest=("${providerstotest[@]}")
+  PROVIDERSTOTEST=("${PROVIDERSTOTEST[@]}")
 else
-  providerstotest=("${NAMESERVERS[@]}" "${providerstotest[@]}")
+  PROVIDERSTOTEST=("${NAMESERVERS[@]}" "${PROVIDERSTOTEST[@]}")
 fi
 # SANITIZE NAMESERVERS ARRAY
-shopt -s extglob                                               # turn on extended glob
-providerstotest=( "${providerstotest[@]/#+([[:blank:]])/}" )   # remove leading space/tab from each element
-providerstotest=( "${providerstotest[@]/%+([[:blank:]])/}" )   # remove trailing space/tab from each element
+shopt -s extglob                                           # turn on extended glob
+PROVIDERSTOTEST=("${PROVIDERSTOTEST[@]/#+([[:blank:]])/}") # remove leading space/tab from each element
+PROVIDERSTOTEST=("${PROVIDERSTOTEST[@]/%+([[:blank:]])/}") # remove trailing space/tab from each element
 
 # DETERMINE NAMESERVERS NAME LENGTH ($nsl)
-for item in "${providerstotest[@]}"; do
+for item in "${PROVIDERSTOTEST[@]}"; do
 if [[ -n "$item" ]] && [[ ! $item =~ ^#.* ]]; then
   pname=${item##*#}
   plength[${#pname}]=${item##*#} # use word length as index
@@ -212,7 +223,22 @@ length=$((${#longest}))
 nsl="%-$((${#longest} + 1))s"
 
 echo 
-totaldomains=0
+echo TESTING DOMAINS:
+echo 
+echo Test Domain Name
+echo ---- ---------------
+for d in "${DOMAINS2TEST[@]}"; do
+if [[ -n "$d" ]] && [[ ! $d =~ ^#.* ]]; then
+  totaldomains=$((totaldomains + 1))
+  printf "%3s: %s\n" "t$totaldomains" "$d"
+fi
+done
+unset totaldomains
+
+echo 
+echo ALPHABETICAL TESTING:
+echo 
+# totaldomains=0
 eval printf '$nsl' "Provider"
 for d in "${DOMAINS2TEST[@]}"; do
 if [[ -n "$d" ]] && [[ ! $d =~ ^#.* ]]; then
@@ -230,7 +256,14 @@ fi
 done
 printf "%-4s\n" "---------"
 
-for p in "${providerstotest[@]}"; do
+
+
+# REDIRECT STDOUT TO TEE IN ORDER TO DUPLICATE THE OUTPUT TO THE TERMINAL AS WELL AS A .LOG FILE
+exec > >(tee "$0.log")
+
+
+
+for p in "${PROVIDERSTOTEST[@]}"; do
 if [[ -n "$p" ]] && [[ ! $p =~ ^#.* ]]; then
 
     pip=${p%%#*}
@@ -243,6 +276,7 @@ if [[ -n "$p" ]] && [[ ! $p =~ ^#.* ]]; then
     if [[ -n "$d" ]] && [[ ! $d =~ ^#.* ]]; then
 
       ttime=$(dig +tries=1 +timeout=1  @"$pip" "$d" |  grep "Query time:" | awk '{ print $4 }')
+
 
 
   # NSLOOKUP INSTEAD OF DIG
@@ -261,7 +295,7 @@ if [[ -n "$p" ]] && [[ ! $p =~ ^#.* ]]; then
 
       if [ "$ttime" -ge "1000" ]; then
        printf "%-4s" "*"
-       xtime=$(( xtime+1 ))
+       xtime=$((xtime+1))
       else
         printf "%-4s" "$ttime"
       fi
@@ -273,7 +307,7 @@ if [[ -n "$p" ]] && [[ ! $p =~ ^#.* ]]; then
     avg=$(awk -v a="$ftime" -v b="$totaldomains" 'BEGIN { printf "%.2f", a/b }' </dev/null)
 
       if [ "$xtime" -gt "0" ]; then
-        printf "%9s\n" "$xtime t/o"
+        printf "%-3s %5s\n" "999" "$xtime-to"
         unset xtime
       else
         printf "%9s\n" "$avg ms"
@@ -282,15 +316,17 @@ if [[ -n "$p" ]] && [[ ! $p =~ ^#.* ]]; then
   fi
 done
 
+# CLOSE AND NORMALIZE THE LOGGING REDIRECTIONS
+exec > /dev/tty 2>&1
+
+# SORT THE OUTPUT BY FASTEST MEDIAN RESPONSE TIME
+read first_line < "$0".log
+num_fields=$(echo "$first_line" | awk '{print NF}')
+sort -k "$((num_fields - 1))" -k "$num_fields" -n "$0".log -o "$0".sorted.log
+
 echo 
-unset totaldomains
-for d in "${DOMAINS2TEST[@]}"; do
-if [[ -n "$d" ]] && [[ ! $d =~ ^#.* ]]; then
-
-  totaldomains=$((totaldomains + 1))
-  printf "%3s: %s\n" "t$totaldomains" "$d"
-fi
-done
-
+echo RESULTS SORTED BY MEDIAN RESPONSE TIME:
 echo
+cat "$0".sorted.log
+echo 
 # exit 0;

@@ -320,7 +320,7 @@ done
 exec > /dev/tty 2>&1
 
 # SORT THE OUTPUT BY FASTEST MEDIAN RESPONSE TIME
-read first_line < "$0".log
+read -r first_line < "$0".log
 num_fields=$(echo "$first_line" | awk '{print NF}')
 sort -k "$((num_fields - 1))" -k "$num_fields" -n "$0".log -o "$0".sorted.log
 

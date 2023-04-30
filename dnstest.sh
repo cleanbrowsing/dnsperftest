@@ -26,6 +26,11 @@ if ! command -v dig &> /dev/null; then
 exit 1
 fi
 
+# SCRAPE SCRIPT PATH INFO
+SrceFllPth=$(readlink -f "${BASH_SOURCE[0]}")
+SrceFolder=$(dirname "$SrceFllPth")
+SrceFileNm=${SrceFllPth##*/}
+
 # BUILD LIST OF NAMESERVERS USED BY THIS HOST
 NAMESERVERS=($(grep ^nameserver /etc/resolv.conf | awk 'BEGIN{i=0}{i++;}{print $2 "#" $1 "/" i}'))
 
@@ -238,6 +243,10 @@ unset totaldomains
 echo 
 echo ALPHABETICAL TESTING:
 echo 
+
+# REDIRECT STDOUT TO TEE IN ORDER TO DUPLICATE THE OUTPUT TO THE TERMINAL AS WELL AS A .LOG FILE
+exec > >(tee "$SrceFllPth.log")
+
 # totaldomains=0
 eval printf '$nsl' "Provider"
 for d in "${DOMAINS2TEST[@]}"; do
@@ -255,13 +264,6 @@ if [[ -n "$d" ]] && [[ ! $d =~ ^#.* ]]; then
 fi
 done
 printf "%-4s\n" "---------"
-
-
-
-# REDIRECT STDOUT TO TEE IN ORDER TO DUPLICATE THE OUTPUT TO THE TERMINAL AS WELL AS A .LOG FILE
-exec > >(tee "$0.log")
-
-
 
 for p in "${PROVIDERSTOTEST[@]}"; do
 if [[ -n "$p" ]] && [[ ! $p =~ ^#.* ]]; then
@@ -319,14 +321,17 @@ done
 # CLOSE AND NORMALIZE THE LOGGING REDIRECTIONS
 exec > /dev/tty 2>&1
 
-# SORT THE OUTPUT BY FASTEST MEDIAN RESPONSE TIME
-read -r first_line < "$0".log
-num_fields=$(echo "$first_line" | awk '{print NF}')
-sort -k "$((num_fields - 1))" -k "$num_fields" -n "$0".log -o "$0".sorted.log
+# SORT THE LOGGED OUTPUT BY FASTEST MEDIAN RESPONSE TIME
+read -r third_line < <(head -n 3 "$SrceFllPth".log | tail -n 1)
+num_fields=$(echo "$third_line" | awk '{print NF}')
+sort -k "$((num_fields - 1))" -k "$num_fields" -n "$SrceFllPth".log -o "$SrceFllPth".sorted.log
+(tail -n +3 "$SrceFllPth".log | sort -k "$((num_fields - 1))" -k "$num_fields" -n) \
+ | cat <(head -n 2 "$SrceFllPth".log) - > "$SrceFllPth".sorted.log
 
 echo 
-echo RESULTS SORTED BY MEDIAN RESPONSE TIME:
+echo RESULTS SORTED BY MEDIAN RESPONSE TIME \("$SrceFileNm.sorted.log"\):
 echo
-cat "$0".sorted.log
+cat "$SrceFllPth".sorted.log
 echo 
+
 # exit 0;

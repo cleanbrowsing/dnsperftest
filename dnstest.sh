@@ -5,7 +5,7 @@ command -v bc > /dev/null || { echo "error: bc was not found. Please install bc.
 { command -v drill > /dev/null && dig=drill; } || { command -v dig > /dev/null && dig=dig; } || { echo "error: dig was not found. Please install dnsutils."; exit 1; }
 
 
-NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/\(.*\)/&#&/'`
+NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/$/#[\/etc\/resolv.conf]/'`
 
 PROVIDERSV4="
 1.1.1.1#cloudflare 
@@ -74,7 +74,7 @@ DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.
 
 
 totaldomains=0
-printf "%-21s" ""
+printf "%-21s %-21s" "" ""
 for d in $DOMAINS2TEST; do
     totaldomains=$((totaldomains + 1))
     printf "%-8s" "test$totaldomains"
@@ -88,7 +88,7 @@ for p in $NAMESERVERS $providerstotest; do
     pname=${p##*#}
     ftime=0
 
-    printf "%-21s" "$pname"
+    printf "%-21s %-21s" "$pname" "$pip"
     for d in $DOMAINS2TEST; do
         ttime=`$dig +tries=1 +time=2 +stats @$pip $d |grep "Query time:" | cut -d : -f 2- | cut -d " " -f 2`
         if [ -z "$ttime" ]; then

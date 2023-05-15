@@ -5,13 +5,16 @@ command -v bc > /dev/null || { echo "error: bc was not found. Please install bc.
 { command -v drill > /dev/null && dig=drill; } || { command -v dig > /dev/null && dig=dig; } || { echo "error: dig was not found. Please install dnsutils."; exit 1; }
 
 
-NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/\(.*\)/&#&/'`
+NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/$/#[\/etc\/resolv.conf]/'`
 
 PROVIDERSV4="
 1.1.1.1#cloudflare 
+1.0.0.1#cloudflare2
 4.2.2.1#level3 
 8.8.8.8#google 
+8.8.4.4#google2
 9.9.9.9#quad9 
+149.112.112.112#quad9_2
 80.80.80.80#freenom 
 208.67.222.123#opendns 
 199.85.126.20#norton 
@@ -25,8 +28,11 @@ PROVIDERSV4="
 
 PROVIDERSV6="
 2606:4700:4700::1111#cloudflare-v6
+2606:4700:4700::1001#cloudflare2-v6
 2001:4860:4860::8888#google-v6
+2001:4860:4860::8844#google2-v6
 2620:fe::fe#quad9-v6
+2620:fe::fe:9#quad9_2-v6
 2620:119:35::35#opendns-v6
 2a0d:2a00:1::1#cleanbrowsing-v6
 2a02:6b8::feed:0ff#yandex-v6
@@ -68,7 +74,7 @@ DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.
 
 
 totaldomains=0
-printf "%-21s" ""
+printf "%-21s %-21s" "" ""
 for d in $DOMAINS2TEST; do
     totaldomains=$((totaldomains + 1))
     printf "%-8s" "test$totaldomains"
@@ -82,7 +88,7 @@ for p in $NAMESERVERS $providerstotest; do
     pname=${p##*#}
     ftime=0
 
-    printf "%-21s" "$pname"
+    printf "%-21s %-21s" "$pname" "$pip"
     for d in $DOMAINS2TEST; do
         ttime=`$dig +tries=1 +time=2 +stats @$pip $d |grep "Query time:" | cut -d : -f 2- | cut -d " " -f 2`
         if [ -z "$ttime" ]; then

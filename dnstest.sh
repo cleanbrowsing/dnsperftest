@@ -8,11 +8,17 @@ command -v bc > /dev/null || { echo "error: bc was not found. Please install bc.
 NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/\(.*\)/&#&/'`
 
 PROVIDERSV4="
-1.1.1.1#cloudflare 
+1.1.1.1#cloudflare
+1.1.1.2#cloudflare
+1.1.1.3#cloudflare
 4.2.2.1#level3 
+4.2.2.2#level3 
+4.2.2.3#level3 
+4.2.2.4#level3 
 8.8.8.8#google 
 9.9.9.9#quad9 
-80.80.80.80#freenom 
+80.80.80.80#freenom
+84.200.69.80#DNS.Watch
 208.67.222.123#opendns 
 199.85.126.20#norton 
 185.228.168.168#cleanbrowsing 
@@ -25,6 +31,7 @@ PROVIDERSV4="
 
 PROVIDERSV6="
 2606:4700:4700::1111#cloudflare-v6
+2606:4700:4700::1112#cloudflare-v6
 2001:4860:4860::8888#google-v6
 2620:fe::fe#quad9-v6
 2620:119:35::35#opendns-v6
@@ -64,7 +71,7 @@ fi
     
 
 # Domains to test. Duplicated domains are ok
-DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.com  wikipedia.org twitter.com gmail.com www.google.com whatsapp.com"
+DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.com wikipedia.org twitter.com gmail.com www.tokopedia.com whatsapp.com tiktok.com"
 
 
 totaldomains=0

@@ -8,23 +8,34 @@ command -v bc > /dev/null || { echo "error: bc was not found. Please install bc.
 NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/\(.*\)/&#&/'`
 
 PROVIDERSV4="
-1.1.1.1#cloudflare 
-4.2.2.1#level3 
-8.8.8.8#google 
-9.9.9.9#quad9 
-80.80.80.80#freenom 
-208.67.222.123#opendns 
-199.85.126.20#norton 
-185.228.168.168#cleanbrowsing 
-77.88.8.7#yandex 
-176.103.130.132#adguard 
-156.154.70.3#neustar 
+1.1.1.1#cloudflare1
+1.1.1.2#cloudflare2
+8.8.8.8#google
+9.9.9.9#quad9
+208.67.222.123#opendns
+176.103.130.132#adguard
+4.2.2.1#level3-1
+209.244.0.3#level3-2
+80.80.80.80#freenom
+84.200.69.80#DNS.Watch
+199.85.126.20#norton
+185.228.168.168#cleanbrowsing
+77.88.8.7#yandex
+156.154.70.3#neustar
 8.26.56.26#comodo
 45.90.28.202#nextdns
+64.6.64.6#Verisign
+223.5.5.5#alidns
+195.46.39.39#SafeDNS
+216.146.35.35#DynDNS
+117.50.11.11#OneDNS
+180.76.76.76#Baidu
+74.82.42.42#HE.NET
 "
 
 PROVIDERSV6="
 2606:4700:4700::1111#cloudflare-v6
+2606:4700:4700::1112#cloudflare-v62
 2001:4860:4860::8888#google-v6
 2620:fe::fe#quad9-v6
 2620:119:35::35#opendns-v6
@@ -32,10 +43,11 @@ PROVIDERSV6="
 2a02:6b8::feed:0ff#yandex-v6
 2a00:5a60::ad1:0ff#adguard-v6
 2610:a1:1018::3#neustar-v6
+2620:119:53::53#comodo-v6
 "
 
 # Testing for IPv6
-$dig +short +tries=1 +time=2 +stats @2a0d:2a00:1::1 www.google.com |grep 216.239.38.120 >/dev/null 2>&1
+$dig +short +tries=1 +time=2 +stats @2606:4700:4700::1112 www.google.com | grep 74.125.200.106 >/dev/null 2>&1
 if [ $? = 0 ]; then
     hasipv6="true"
 fi
@@ -64,7 +76,7 @@ fi
     
 
 # Domains to test. Duplicated domains are ok
-DOMAINS2TEST="www.google.com amazon.com facebook.com www.youtube.com www.reddit.com  wikipedia.org twitter.com gmail.com www.google.com whatsapp.com"
+DOMAINS2TEST="google.com amazon.com facebook.com www.youtube.com www.reddit.com wikipedia.org twitter.com www.tokopedia.com whatsapp.com tiktok.com"
 
 
 totaldomains=0

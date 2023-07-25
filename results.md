@@ -221,3 +221,5 @@ comodo            11 ms   15 ms   15 ms   27 ms   15 ms   19 ms   15 ms   15 ms 
 #11 freenom          87 ms   124 ms    92 ms   111 ms   136 ms   250 ms   128 ms   338 ms   101 ms   177 ms    154.40
 #12 comodo           89 ms  5092 ms    93 ms    99 ms    96 ms    85 ms 10106 ms    80 ms    86 ms  5127 ms   2095.30
 ```
+
+

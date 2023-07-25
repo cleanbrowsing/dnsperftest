@@ -47,7 +47,7 @@ PROVIDERSV6="
 "
 
 # Testing for IPv6
-$dig +short +tries=1 +time=2 +stats @2606:4700:4700::1112 www.google.com | grep 74.125.200.106 >/dev/null 2>&1
+$dig +short +tries=1 +time=2 +stats @2606:4700:4700::1112 alsyundawy.my.id | grep 172.67.134.149 >/dev/null 2>&1
 if [ $? = 0 ]; then
     hasipv6="true"
 fi

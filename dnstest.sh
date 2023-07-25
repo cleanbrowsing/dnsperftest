@@ -76,7 +76,7 @@ fi
     
 
 # Domains to test. Duplicated domains are ok
-DOMAINS2TEST="google.com amazon.com facebook.com www.youtube.com www.reddit.com wikipedia.org twitter.com www.tokopedia.com whatsapp.com tiktok.com"
+DOMAINS2TEST="google.com telegram.org facebook.com youtube.com instagram.com wikipedia.org twitter.com www.tokopedia.com whatsapp.com tiktok.com detik.com javhihi.com"
 
 
 totaldomains=0

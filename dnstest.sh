@@ -47,7 +47,7 @@ PROVIDERSV6="
 "
 
 # Testing for IPv6
-$dig +short +tries=1 +time=2 +stats @2606:4700:4700::1112 alsyundawy.my.id | grep 172.67.134.149 >/dev/null 2>&1
+$dig +short +tries=1 +time=2 +stats @2606:4700:4700::1111 alsyundawy.my.id | grep '172.67.134.149\|104.21.6.70' >/dev/null 2>&1
 if [ $? = 0 ]; then
     hasipv6="true"
 fi
@@ -76,7 +76,7 @@ fi
     
 
 # Domains to test. Duplicated domains are ok
-DOMAINS2TEST="google.com telegram.org facebook.com youtube.com instagram.com wikipedia.org twitter.com www.tokopedia.com whatsapp.com tiktok.com detik.com javhihi.com"
+DOMAINS2TEST="google.com telegram.org facebook.com youtube.com instagram.com wikipedia.org twitter.com www.tokopedia.com whatsapp.com tiktok.com"
 
 
 totaldomains=0

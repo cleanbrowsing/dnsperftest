@@ -5,7 +5,7 @@ command -v bc > /dev/null || { echo "error: bc was not found. Please install bc.
 { command -v drill > /dev/null && dig=drill; } || { command -v dig > /dev/null && dig=dig; } || { echo "error: dig was not found. Please install dnsutils."; exit 1; }
 
 
-NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/\(.*\)/&#&/'`
+NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -f 2 | cut -d " " -f 2 | sed 's/\(.*\)/&#&/'`
 
 PROVIDERSV4="
 1.1.1.1#cloudflare 
